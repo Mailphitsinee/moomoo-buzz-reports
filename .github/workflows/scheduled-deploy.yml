@@ -1,0 +1,13 @@
+name: Scheduled Deploy
+
+on:
+    schedule:
+      - cron: '0 2 * * 1'   # Every Monday at 2am UTC
+      - cron: '0 2 * * 4'   # Every Thursday at 2am UTC
+
+jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Trigger Netlify build
+          run: curl -X POST ${{ secrets.NETLIFY_BUILD_HOOK }}
