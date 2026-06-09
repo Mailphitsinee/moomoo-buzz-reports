@@ -1,1015 +1,1179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thai Investor Buzz — Jun 2–5 2026</title>
-<style>
-/* ── Reset & tokens ─────────────────────────────── */
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#070c14;
-  --panel:#0d1520;
-  --card:#111c2b;
-  --border:#1e2e42;
-  --border2:#28404f;
-  --text:#dce8f5;
-  --muted:#6a8fa8;
-  --faint:#243344;
-  --green:#22d67a;
-  --green-dim:#0d3320;
-  --red:#f44;
-  --red-dim:#330e0e;
-  --yellow:#f0c040;
-  --yellow-dim:#2e2300;
-  --blue:#4db8ff;
-  --blue-dim:#0d1e33;
-  --purple:#b084ff;
-  --orange:#f08040;
-  --teal:#30d4c0;
-  --radius:8px;
-  --font-mono:'SF Mono','Fira Code','Consolas',monospace;
-}
-html,body{height:100%;overflow:hidden}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,'Segoe UI',sans-serif;font-size:14px;display:flex;flex-direction:column}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thai Investor Stock Buzz Report — June 9, 2026</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card: #1a1d27;
+      --card2: #20243a;
+      --border: #2a2d3e;
+      --accent: #4f8ef7;
+      --accent2: #7c5cfc;
+      --green: #22c55e;
+      --red: #ef4444;
+      --yellow: #f59e0b;
+      --orange: #fb923c;
+      --text: #e2e8f0;
+      --muted: #8892a4;
+      --line-green: #00b900;
+    }
 
-/* ── Ticker strip ────────────────────────────────── */
-#ticker-strip{
-  flex-shrink:0;
-  background:#040810;
-  border-bottom:1px solid var(--border);
-  height:34px;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-  position:relative;
-}
-#ticker-strip::before,#ticker-strip::after{
-  content:'';position:absolute;top:0;width:60px;height:100%;z-index:2;pointer-events:none;
-}
-#ticker-strip::before{left:0;background:linear-gradient(to right,#040810,transparent)}
-#ticker-strip::after{right:0;background:linear-gradient(to left,#040810,transparent)}
-.ticker-track{
-  display:flex;gap:0;
-  animation:tickerScroll 28s linear infinite;
-  white-space:nowrap;
-}
-.ticker-track:hover{animation-play-state:paused}
-@keyframes tickerScroll{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
-}
-.tick-item{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:0 20px;border-right:1px solid var(--border);
-  font-size:12px;font-family:var(--font-mono);
-}
-.tick-label{color:var(--muted);font-size:11px}
-.tick-val{font-weight:600}
-.tick-chg{font-size:11px}
-.up{color:var(--green)} .dn{color:var(--red)} .neu{color:var(--muted)}
-.tick-badge{background:#1a2a10;border:1px solid #2a4a20;color:var(--green);font-size:10px;border-radius:3px;padding:1px 5px}
-.tick-badge-ipo{background:#1a1a30;border:1px solid #3a3a6a;color:#8888ff;font-size:10px;border-radius:3px;padding:1px 5px}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Top nav bar ─────────────────────────────────── */
-#topbar{
-  flex-shrink:0;
-  background:var(--panel);
-  border-bottom:1px solid var(--border);
-  height:46px;
-  display:flex;
-  align-items:center;
-  padding:0 16px;
-  gap:16px;
-}
-.logo{font-weight:800;font-size:15px;letter-spacing:-0.3px;color:var(--text)}
-.logo span{color:var(--blue)}
-.nav-pill{
-  font-size:12px;color:var(--muted);padding:4px 10px;border-radius:16px;border:1px solid var(--border);cursor:pointer;
-  transition:all .2s;
-}
-.nav-pill.active,.nav-pill:hover{background:var(--blue-dim);border-color:var(--blue);color:var(--blue)}
-.spacer{flex:1}
-.date-chip{font-size:11px;color:var(--muted);font-family:var(--font-mono);background:var(--faint);padding:3px 8px;border-radius:4px}
-.issue-chip{font-size:11px;color:var(--purple);background:#1a1030;border:1px solid #3a2a60;padding:3px 8px;border-radius:4px}
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-/* ── Main layout ─────────────────────────────────── */
-#layout{
-  flex:1;
-  display:grid;
-  grid-template-columns:230px 1fr;
-  overflow:hidden;
-}
+    /* ── HEADER ── */
+    .header {
+      background: linear-gradient(135deg, #1a1d27 0%, #20243a 50%, #1a1d27 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 40px 24px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header-left {}
+    .header-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .header-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .header-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .header-right {
+      text-align: right;
+    }
+    .header-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .header-meta {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
 
-/* ── Sidebar ─────────────────────────────────────── */
-#sidebar{
-  background:var(--panel);
-  border-right:1px solid var(--border);
-  overflow-y:auto;
-  scrollbar-width:thin;
-  scrollbar-color:var(--border) transparent;
-  padding:14px 12px 80px;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-}
-.side-section{border-bottom:1px solid var(--border);padding-bottom:12px}
-.side-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.9px;margin-bottom:8px}
+    /* ── LIVE TICKER BAR ── */
+    .ticker-bar {
+      background: #111420;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 40px;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .ticker-label { color: var(--muted); font-weight: 500; }
+    .ticker-val { font-weight: 700; color: #fff; }
+    .ticker-chg.up { color: var(--green); }
+    .ticker-chg.down { color: var(--red); }
+    .ticker-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); }
 
-/* SET index widget */
-.set-widget{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px}
-.set-big{font-size:22px;font-weight:800;font-family:var(--font-mono);color:var(--green)}
-.set-chg{font-size:12px;color:var(--green);margin-left:6px}
-.set-sub{font-size:10px;color:var(--muted);margin-top:2px}
-.mini-week{display:flex;gap:4px;margin-top:10px}
-.mini-day{flex:1;background:var(--faint);border-radius:4px;padding:5px 4px;text-align:center;border:1px solid var(--border)}
-.mini-day.today-d{border-color:var(--yellow)}
-.mini-day.closed-d{opacity:.45}
-.md-lbl{font-size:9px;color:var(--muted)}
-.md-val{font-size:10px;font-weight:700;margin-top:1px;font-family:var(--font-mono)}
-.heat-mini{height:2px;background:var(--border);border-radius:1px;margin-top:3px;overflow:hidden}
-.hm-bar{height:100%;border-radius:1px;width:0;transition:width 1s ease}
+    /* ── LAYOUT ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 32px 40px 60px; }
 
-/* Macro stats */
-.stat-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0}
-.stat-lbl{font-size:11px;color:var(--muted)}
-.stat-val{font-size:11px;font-weight:700;font-family:var(--font-mono)}
-.unv{font-size:9px;background:var(--yellow-dim);border:1px solid #4a3a0a;color:var(--yellow);border-radius:2px;padding:1px 3px;margin-left:3px}
-.vrd{font-size:9px;background:var(--green-dim);border:1px solid #1a4a22;color:var(--green);border-radius:2px;padding:1px 3px;margin-left:3px}
+    /* ── SECTION ── */
+    .section { margin-bottom: 40px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .section-number {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800; color: #fff;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.3px;
+    }
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
 
-/* Events */
-.event-item{display:flex;gap:8px;padding:5px 0;border-bottom:1px solid var(--faint)}
-.event-item:last-child{border-bottom:none}
-.ev-date{font-size:10px;font-family:var(--font-mono);color:var(--blue);min-width:46px;padding-top:1px}
-.ev-text{font-size:11px;color:var(--muted)}
+    /* ── CARDS GRID ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .card-ticker {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .card-name {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--green); }
+    .badge-red { background: rgba(239,68,68,0.15); color: var(--red); }
+    .badge-yellow { background: rgba(245,158,11,0.15); color: var(--yellow); }
+    .badge-blue { background: rgba(79,142,247,0.15); color: var(--accent); }
+    .badge-orange { background: rgba(251,146,60,0.15); color: var(--orange); }
+    .badge-purple { background: rgba(124,92,252,0.15); color: var(--accent2); }
 
-/* Alert sidebar */
-.side-alert{border-radius:5px;padding:8px;font-size:11px;margin-bottom:5px;border:1px solid}
-.sa-red{background:var(--red-dim);border-color:#6b2020;color:#ff9999}
-.sa-green{background:var(--green-dim);border-color:#1a5a22;color:#88ee99}
-.sa-blue{background:var(--blue-dim);border-color:#1a3a6a;color:#88ccff}
-.sa-title{font-weight:700;margin-bottom:2px}
+    .card-price {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .card-change { font-size: 13px; font-weight: 600; }
+    .card-change.up { color: var(--green); }
+    .card-change.down { color: var(--red); }
+    .card-divider { height: 1px; background: var(--border); margin: 12px 0; }
+    .card-meta { font-size: 12px; color: var(--muted); line-height: 1.7; }
+    .card-meta strong { color: var(--text); font-weight: 600; }
 
-/* ── Main content ────────────────────────────────── */
-#main{
-  overflow-y:auto;
-  scrollbar-width:thin;
-  scrollbar-color:var(--border) transparent;
-  padding:0 0 80px;
-}
+    /* ── TABLE ── */
+    .table-wrap {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    thead tr { background: #111420; }
+    th {
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text);
+      border-bottom: 1px solid rgba(42,45,62,0.5);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+    td.up { color: var(--green); font-weight: 700; }
+    td.down { color: var(--red); font-weight: 700; }
+    td.ticker-td { font-weight: 800; color: #fff; font-size: 14px; }
 
-/* Alert banners */
-.alert-row{display:flex;gap:10px;padding:12px 16px;flex-wrap:wrap;border-bottom:1px solid var(--border)}
-.alert-banner{
-  flex:1;min-width:220px;
-  border-radius:6px;border:1px solid;padding:10px 12px;
-}
-.ab-red{background:var(--red-dim);border-color:#6b2020}
-.ab-green{background:var(--green-dim);border-color:#1a6a22}
-.ab-blue{background:var(--blue-dim);border-color:#1a3a7a}
-.ab-title{font-size:12px;font-weight:700;margin-bottom:3px}
-.ab-red .ab-title{color:#ff8888}
-.ab-green .ab-title{color:var(--green)}
-.ab-blue .ab-title{color:var(--blue)}
-.ab-body{font-size:11px;color:var(--muted)}
+    /* ── TIMELINE ── */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-date {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      padding-top: 2px;
+    }
+    .timeline-date .today-tag {
+      display: inline-block;
+      background: rgba(34,197,94,0.15);
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 3px;
+    }
+    .timeline-content {}
+    .timeline-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .timeline-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
-/* Stock grid section */
-.grid-section{padding:14px 16px}
-.grid-section-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.gs-title{font-size:14px;font-weight:700}
-.gs-count{font-size:11px;background:var(--faint);border:1px solid var(--border);border-radius:12px;padding:2px 8px;color:var(--muted)}
-.gs-filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.gf-btn{font-size:11px;padding:3px 10px;border-radius:12px;border:1px solid var(--border);background:var(--faint);color:var(--muted);cursor:pointer;transition:all .15s}
-.gf-btn:hover,.gf-btn.active{background:var(--blue-dim);border-color:var(--blue);color:var(--blue)}
+    /* ── ALERT BOX ── */
+    .alert-box {
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      display: flex;
+      gap: 14px;
+    }
+    .alert-box.red { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25); }
+    .alert-box.yellow { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25); }
+    .alert-box.blue { background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.25); }
+    .alert-icon { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
+    .alert-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .alert-body { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .alert-body strong { color: var(--text); }
 
-/* Stock cards grid */
-.stock-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+    /* ── INFO GRID ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .info-tile {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .info-tile-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .info-tile-val {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .info-tile-sub { font-size: 12px; color: var(--muted); }
+    .info-tile-sub.up { color: var(--green); }
+    .info-tile-sub.down { color: var(--red); }
 
-.scard{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  overflow:hidden;
-  cursor:pointer;
-  transition:border-color .2s,transform .15s;
-  position:relative;
-}
-.scard:hover{border-color:var(--border2);transform:translateY(-1px)}
-.scard.expanded{border-color:var(--blue)}
-.scard-accent{height:3px}
-.acc-green{background:linear-gradient(90deg,var(--green),#10a050)}
-.acc-red{background:linear-gradient(90deg,var(--red),#a02020)}
-.acc-yellow{background:linear-gradient(90deg,var(--yellow),#c07020)}
-.acc-blue{background:linear-gradient(90deg,var(--blue),#2080c0)}
+    /* ── LINE SECTION ── */
+    .line-header {
+      background: linear-gradient(135deg, rgba(0,185,0,0.12) 0%, rgba(0,185,0,0.04) 100%);
+      border: 1px solid rgba(0,185,0,0.3);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .line-logo {
+      width: 44px; height: 44px;
+      background: var(--line-green);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      color: #fff;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .line-header-text {}
+    .line-header-title { font-size: 17px; font-weight: 700; color: #fff; }
+    .line-header-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
 
-.scard-top{padding:12px;display:flex;gap:10px;align-items:flex-start}
-.sc-rank{font-size:11px;color:var(--muted);font-family:var(--font-mono);padding-top:1px;min-width:18px}
-.sc-info{flex:1;min-width:0}
-.sc-ticker{font-size:15px;font-weight:800;font-family:var(--font-mono);color:var(--text)}
-.sc-name{font-size:11px;color:var(--muted);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sc-badges{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap}
-.badge{font-size:10px;border-radius:3px;padding:1px 5px;border:1px solid}
-.b-set{background:#0a2018;border-color:#1a5028;color:#50c878}
-.b-us{background:#0a1430;border-color:#1a3060;color:#5090d8}
-.b-bull{background:var(--green-dim);border-color:#1a5022;color:var(--green)}
-.b-bear{background:var(--red-dim);border-color:#5a1515;color:#ff7070}
-.b-mix{background:var(--yellow-dim);border-color:#5a4010;color:var(--yellow)}
-.b-ipo{background:#1a1030;border-color:#4a30a0;color:var(--purple)}
+    .line-subsection { margin-bottom: 24px; }
+    .line-subsection-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--line-green);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(0,185,0,0.2);
+    }
 
-.sc-price-row{padding:0 12px 10px;display:flex;align-items:baseline;gap:8px}
-.sc-price{font-size:18px;font-weight:800;font-family:var(--font-mono)}
-.sc-pct{font-size:12px;font-weight:600}
-.sc-note{font-size:10px;color:var(--muted)}
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .stat-tile {
+      background: rgba(0,185,0,0.06);
+      border: 1px solid rgba(0,185,0,0.2);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .stat-tile-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+    .stat-tile-val { font-size: 17px; font-weight: 800; color: #fff; }
+    .stat-tile-sub { font-size: 11px; color: var(--line-green); margin-top: 2px; }
 
-.sc-bar-wrap{margin:0 12px 10px;background:var(--faint);height:3px;border-radius:2px;overflow:hidden}
-.sc-bar{height:100%;border-radius:2px;width:0;transition:width 1.2s ease}
+    /* ── GAPS WARNING ── */
+    .gaps-box {
+      background: rgba(79,142,247,0.06);
+      border: 1px solid rgba(79,142,247,0.2);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .gaps-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .gaps-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .gaps-list li {
+      font-size: 12px;
+      color: var(--muted);
+      padding-left: 16px;
+      position: relative;
+    }
+    .gaps-list li::before {
+      content: '·';
+      position: absolute;
+      left: 4px;
+      color: var(--accent);
+    }
 
-.sc-why{padding:0 12px 12px;font-size:11px;color:var(--muted);border-top:1px solid var(--faint);padding-top:8px}
+    /* ── SOURCES ── */
+    .sources-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .source-pill {
+      display: inline-block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 11px;
+      color: var(--accent);
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .source-pill:hover { background: var(--card2); border-color: var(--accent); }
 
-/* Expanded panel */
-.scard-expanded{display:none;background:var(--faint);border-top:1px solid var(--border);padding:12px}
-.scard.expanded .scard-expanded{display:block}
-.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
-.exp-item{background:var(--card);border-radius:5px;padding:8px}
-.exp-lbl{font-size:10px;color:var(--muted)}
-.exp-val{font-size:12px;font-weight:600;margin-top:2px;font-family:var(--font-mono)}
-.exp-detail{font-size:11px;color:var(--muted);line-height:1.6}
-.data-flag{font-size:10px;border-radius:4px;padding:4px 7px;margin-top:6px;display:inline-block}
-.flag-warn{background:var(--yellow-dim);border:1px solid #5a4010;color:var(--yellow)}
-.flag-ok{background:var(--green-dim);border:1px solid #1a4a20;color:var(--green)}
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-left { font-size: 12px; color: var(--muted); }
+    .footer-disclaimer {
+      font-size: 11px;
+      color: rgba(136,146,164,0.6);
+      max-width: 600px;
+      text-align: right;
+    }
 
-/* ── Divider between Thai and Offshore ──────────── */
-.market-divider{
-  display:flex;align-items:center;gap:10px;padding:14px 16px 0;
-}
-.md-line{flex:1;height:1px;background:var(--border)}
-.md-label{font-size:11px;color:var(--muted);white-space:nowrap;padding:3px 10px;border:1px solid var(--border);border-radius:12px}
-
-/* ── Bottom tabs ─────────────────────────────────── */
-#bottom-area{border-top:1px solid var(--border)}
-.tab-bar{display:flex;background:var(--panel);border-bottom:1px solid var(--border)}
-.tab-btn{padding:9px 18px;font-size:12px;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s}
-.tab-btn:hover{color:var(--text)}
-.tab-btn.active{color:var(--blue);border-bottom-color:var(--blue)}
-.tab-pane{display:none;padding:14px 16px}
-.tab-pane.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
-
-/* Theme cards */
-.theme-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px}
-.tc-num{font-size:10px;color:var(--purple);font-family:var(--font-mono);margin-bottom:4px}
-.tc-title{font-size:13px;font-weight:700;margin-bottom:6px}
-.tc-body{font-size:11px;color:var(--muted);line-height:1.6}
-.tc-stocks{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
-.tc-chip{font-size:10px;background:var(--faint);border:1px solid var(--border);color:var(--blue);border-radius:3px;padding:1px 5px;font-family:var(--font-mono)}
-
-/* Social threads */
-.thread-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:11px}
-.th-source{font-size:10px;color:var(--purple);margin-bottom:4px}
-.th-title{font-size:12px;font-weight:600;margin-bottom:4px;line-height:1.4}
-.th-meta{font-size:10px;color:var(--muted)}
-
-/* Moomoo opps */
-.opp-card{background:linear-gradient(135deg,var(--blue-dim) 0%,var(--green-dim) 100%);border:1px solid var(--border2);border-radius:var(--radius);padding:12px}
-.opp-icon{font-size:18px;margin-bottom:6px}
-.opp-title{font-size:12px;font-weight:700;color:var(--text);margin-bottom:4px}
-.opp-body{font-size:11px;color:var(--muted);line-height:1.5}
-
-/* Integrity tab */
-#tab-integrity{display:none;padding:14px 16px}
-#tab-integrity.active{display:block}
-.int-table{width:100%;border-collapse:collapse;font-size:12px}
-.int-table th{background:var(--faint);color:var(--muted);font-weight:600;padding:8px 10px;text-align:left;border-bottom:1px solid var(--border)}
-.int-table td{padding:7px 10px;border-bottom:1px solid var(--faint);vertical-align:top}
-.int-table tr:last-child td{border-bottom:none}
-
-/* Sources tab */
-#tab-sources{display:none;padding:14px 16px}
-#tab-sources.active{display:block}
-.src-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:6px}
-.src-list li{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:8px 10px}
-.src-list a{color:var(--blue);text-decoration:none;font-size:11px}
-.src-list a:hover{text-decoration:underline}
-.src-desc{font-size:10px;color:var(--muted);margin-top:2px}
-
-/* Scrollbars */
-::-webkit-scrollbar{width:5px;height:5px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-
-/* Responsive */
-@media(max-width:780px){
-  html,body{overflow:auto;height:auto}
-  #layout{grid-template-columns:1fr;overflow:visible}
-  #sidebar{display:none}
-  .stock-grid{grid-template-columns:1fr 1fr}
-  #main{overflow:visible}
-}
-@media(max-width:480px){
-  .stock-grid{grid-template-columns:1fr}
-  .tab-pane.active{grid-template-columns:1fr}
-}
-</style>
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .header, .footer { padding: 20px; }
+      .container { padding: 20px; }
+      .ticker-bar { padding: 10px 20px; }
+      .header-right { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ═══ TICKER STRIP ═══════════════════════════════════ -->
-<div id="ticker-strip">
-  <div class="ticker-track" id="tickerTrack">
-    <!-- duplicated for seamless loop -->
+<!-- ═══════════════════════ HEADER ═══════════════════════ -->
+<div class="header">
+  <div class="header-left">
+    <div class="header-eyebrow">moomoo Thailand · Market Intelligence</div>
+    <div class="header-title">Thai Investor Stock Buzz Report</div>
+    <div class="header-subtitle">Thai retail investor sentiment, trending stocks & market intelligence</div>
+  </div>
+  <div class="header-right">
+    <div class="header-badge">Issue — 2026.06.09</div>
+    <div class="header-meta">
+      Published: Monday, June 9, 2026<br>
+      Period: June 5–9, 2026<br>
+      Data pulled: Intraday (mid-session)
+    </div>
   </div>
 </div>
 
-<!-- ═══ TOP NAV ════════════════════════════════════════ -->
-<div id="topbar">
-  <div class="logo"><span>moomoo</span> Buzz</div>
-  <div class="nav-pill active" onclick="switchView('grid',this)">Grid View</div>
-  <div class="spacer"></div>
-  <div class="date-chip">Jun 2–5, 2026 · Issue #4</div>
-  <div class="issue-chip">v5 Dashboard</div>
+<!-- ═══════════════════════ LIVE TICKER BAR ═══════════════════════ -->
+<div class="ticker-bar">
+  <div class="ticker-item">
+    <span class="ticker-label">SET Index</span>
+    <span class="ticker-val">1,581.84</span>
+    <span class="ticker-chg up">+20.16 (+1.29%)</span>
+  </div>
+  <div class="ticker-dot"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">SET50</span>
+    <span class="ticker-val">1,018</span>
+    <span class="ticker-chg up">+0.37%</span>
+  </div>
+  <div class="ticker-dot"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">BOT Rate</span>
+    <span class="ticker-val">1.00%</span>
+    <span class="ticker-chg" style="color:var(--muted)">Held Apr 2026</span>
+  </div>
+  <div class="ticker-dot"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">SET 52W Range</span>
+    <span class="ticker-val">1,507 – 1,696</span>
+  </div>
+  <div class="ticker-dot"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">SET 1Y Return</span>
+    <span class="ticker-val ticker-chg up">+39.26%</span>
+  </div>
+  <div class="ticker-dot"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">LY Corp (4689.T)</span>
+    <span class="ticker-val">406.70 JPY</span>
+    <span class="ticker-chg down">-0.32%</span>
+  </div>
 </div>
 
-<!-- ═══ MAIN LAYOUT ════════════════════════════════════ -->
-<div id="layout">
+<!-- ═══════════════════════ MAIN CONTENT ═══════════════════════ -->
+<div class="container">
 
-  <!-- ── Sidebar ────────────────────────────────────── -->
-  <div id="sidebar">
+  <!-- ── SECTION 1: INDEX OVERVIEW ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <div class="section-title">SET Index — Today's Overview (June 9, 2026)</div>
+      <div class="section-line"></div>
+    </div>
 
-    <!-- SET Widget -->
-    <div class="side-section">
-      <div class="side-label">SET Index</div>
-      <div class="set-widget">
+    <div class="info-grid" style="margin-bottom:16px;">
+      <div class="info-tile">
+        <div class="info-tile-label">SET Index (Live)</div>
+        <div class="info-tile-val">1,581.84</div>
+        <div class="info-tile-sub up">+20.16 pts (+1.29%) mid-session</div>
+      </div>
+      <div class="info-tile">
+        <div class="info-tile-label">SET50 (TradingEcon.)</div>
+        <div class="info-tile-val">1,018</div>
+        <div class="info-tile-sub up">+0.37%</div>
+      </div>
+      <div class="info-tile">
+        <div class="info-tile-label">Analyst Range Forecast</div>
+        <div class="info-tile-val">1,550–1,580</div>
+        <div class="info-tile-sub" style="color:var(--muted)">Sideways call (June 9)</div>
+      </div>
+      <div class="info-tile">
+        <div class="info-tile-label">Previous Close (Jun 5)</div>
+        <div class="info-tile-val">1,594.79</div>
+        <div class="info-tile-sub up">+6.73 (+0.42%)</div>
+      </div>
+      <div class="info-tile">
+        <div class="info-tile-label">52-Week Low</div>
+        <div class="info-tile-val">1,507.22</div>
+        <div class="info-tile-sub" style="color:var(--muted)">Recent trough</div>
+      </div>
+      <div class="info-tile">
+        <div class="info-tile-label">52-Week High</div>
+        <div class="info-tile-val">1,695.99</div>
+        <div class="info-tile-sub" style="color:var(--muted)">Room to recover</div>
+      </div>
+    </div>
+
+    <div class="alert-box yellow">
+      <div class="alert-icon">⚠️</div>
+      <div>
+        <div class="alert-title">Market Status Note</div>
+        <div class="alert-body">SET data pulled mid-session on June 9. Final closing price not yet available. Reuters (3:49 AM UTC) showed +0.70%; Yahoo Finance (12:30 PM GMT+7) showed +1.29%. <strong>Verify at close before publishing.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 2: WEEKLY RECAP ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <div class="section-title">Weekly Market Recap (June 2–9, 2026)</div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Market Direction</th>
+            <th>Key Event / Analyst Comment</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Jun 2</strong></td>
+            <td class="up">▲ +1.26%&nbsp; 1,588.06</td>
+            <td>Thai stocks positive; <strong>Banks + Construction</strong> sectors highlighted. Vol: 93,010M THB. Analyst: กิจพณ ไพรไพศาลกิจ (UOB Kay Hian)</td>
+            <td><a href="https://today.line.me/th/v3/article/YaKEJG8" style="color:var(--accent);text-decoration:none;font-size:11px;">StockRadars / LINE TODAY</a></td>
+          </tr>
+          <tr>
+            <td><strong>Jun 3</strong></td>
+            <td style="color:var(--muted)">— Closed</td>
+            <td>Thai market holiday — no trading</td>
+            <td>SET Calendar</td>
+          </tr>
+          <tr>
+            <td><strong>Jun 4</strong></td>
+            <td class="up">▲ Broke 1,600</td>
+            <td>SET pushed through 1,600 intraday (high: 1,607.25) — analysts flagged "sector rotation into growth plays"</td>
+            <td><a href="https://www.youtube.com/watch?v=zioBFK3RjMQ" style="color:var(--accent);text-decoration:none;font-size:11px;">TNN ชั่วโมงทำเงิน</a></td>
+          </tr>
+          <tr>
+            <td><strong>Jun 5</strong></td>
+            <td class="down">▼ Pulled back</td>
+            <td><strong>AI stocks</strong> faced selling pressure → SET fell. Analyst วทัญ จิตต์สมนึก (Pi Securities): "dip is an accumulation opportunity"</td>
+            <td><a href="https://www.youtube.com/watch?v=FFUAYFrCHqs" style="color:var(--accent);text-decoration:none;font-size:11px;">TNN Jun 5</a></td>
+          </tr>
+          <tr>
+            <td><strong>Jun 6</strong></td>
+            <td style="color:var(--muted)">Weekend</td>
+            <td>Pantip "บ้าบอคอหุ้น" thread: <strong>TRUE</strong> CEO ("คุณซิกเว่") disclosed buying additional <strong>600,000 TRUE shares</strong></td>
+            <td><a href="https://pantip.com/topic/44116331" style="color:var(--accent);text-decoration:none;font-size:11px;">Pantip</a></td>
+          </tr>
+          <tr>
+            <td><strong>Jun 7</strong></td>
+            <td style="color:var(--muted)">Weekend</td>
+            <td>YouTube analysis debate: "SET recovery — real buying or just a rebound?" Retail investor sentiment divided</td>
+            <td><a href="https://www.youtube.com/watch?v=rAWjKupvZEY" style="color:var(--accent);text-decoration:none;font-size:11px;">YouTube (Jun 7)</a></td>
+          </tr>
+          <tr>
+            <td><strong>Jun 8</strong></td>
+            <td class="down">▼ Fell w/ region</td>
+            <td>Thai stocks dropped in line with Asian regional decline. <strong>AOT: -2.73%</strong> (biggest SET50 loser). Analyst เทิดศักดิ์ ทวีธีระธรรม (Asia Plus): rotate to "safe haven" stocks</td>
+            <td><a href="https://www.youtube.com/watch?v=F9mwpqPXsWg" style="color:var(--accent);text-decoration:none;font-size:11px;">TNN Jun 8</a></td>
+          </tr>
+          <tr>
+            <td><strong>Jun 9</strong><br><span class="badge badge-green" style="font-size:10px;">TODAY</span></td>
+            <td class="up">▲ +1.29% (mid-sess.)</td>
+            <td>Recovery underway, above analyst's 1,550–1,580 forecast range. 3rd Annual Thailand Investors Forum held today in Bangkok.</td>
+            <td><a href="https://www.reuters.com/markets/quote/.SETI" style="color:var(--accent);text-decoration:none;font-size:11px;">Reuters Live</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── SECTION 3: MOST DISCUSSED STOCKS ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <div class="section-title">Most Active / Discussed Stocks This Week</div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-ticker">ADVANC</div><div class="card-name">Advanced Info Service</div></div>
+          <span class="badge badge-green">Bullish</span>
+        </div>
+        <div class="card-price">364.00 THB</div>
+        <div class="card-change up">+11.00 (+3.12%) — Jun 2</div>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <strong>Why buzzing:</strong> Telecom/AI infrastructure play; highest by trading value Jun 2. Highlighted in BLS 2026 picks (WHAUP, GULF, <strong>ADVANC</strong>, GUNKUL). AI theme beneficiary.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-ticker">TRUE</div><div class="card-name">True Corporation</div></div>
+          <span class="badge badge-green">Bullish</span>
+        </div>
+        <div class="card-price">14.00 THB</div>
+        <div class="card-change up">+0.20 (+1.45%) — Jun 2</div>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <strong>Why buzzing:</strong> CEO ("คุณซิกเว่") disclosed buying an additional <strong>600,000 shares</strong> — discussed on Pantip (Jun 6). Second-highest by trading value Jun 2.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-ticker">PTTEP</div><div class="card-name">PTT Exploration &amp; Production</div></div>
+          <span class="badge badge-yellow">Mixed</span>
+        </div>
+        <div class="card-price">143.00 THB</div>
+        <div class="card-change up">+1.50 (+1.06%) — Jun 2</div>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <strong>Why buzzing:</strong> Resources sector led trading value (22,433M THB on Jun 2). Energy/oil play amid Middle East monitoring.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-ticker">AOT</div><div class="card-name">Airports of Thailand</div></div>
+          <span class="badge badge-red">Bearish</span>
+        </div>
+        <div class="card-price">— (Jun 9)</div>
+        <div class="card-change down">-2.73% — Jun 8 (Biggest SET50 loser)</div>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <strong>Why buzzing:</strong> Largest single-day laggard in SET50 on June 8. Short-selling data tracked. Tourist/travel sector sensitive to global risk-off mood.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-ticker">AMATA</div><div class="card-name">Amata Corporation</div></div>
+          <span class="badge badge-green">Bullish</span>
+        </div>
+        <div class="card-price">TP: 23.50 THB</div>
+        <div class="card-change up">BUY — Kasikorn Securities</div>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <strong>Why buzzing:</strong> PBV 0.7x, dividend yield <strong>6.6%</strong>, backlog ~25B THB. Industrial estate play on FDI into Thailand. Featured in Kasikorn Securities Top Picks.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-ticker">KTB</div><div class="card-name">Krung Thai Bank</div></div>
+          <span class="badge badge-yellow">Mixed</span>
+        </div>
+        <div class="card-price">35.00 THB</div>
+        <div class="card-change down">-0.71% (recent)</div>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <strong>Why buzzing:</strong> Banks sector most active subsector Jun 2 (15,535M THB). BOT rate cut to 1.00% → banking sector re-rating thesis. Appeared in Investing.com most-active list.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-ticker">TRC</div><div class="card-name">TRC Construction</div></div>
+          <span class="badge badge-red">Alert</span>
+        </div>
+        <div class="card-price">⚠️ Under Surveillance</div>
+        <div class="card-change down">Negative shareholders' equity Q1/2026</div>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <strong>Why buzzing:</strong> SET officially flagged TRC on June 5, 2026 for negative shareholders' equity in Q1/2026 Financial Statement. Regulatory concern.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-ticker">GULF / GUNKUL</div><div class="card-name">Gulf Energy / Gunkul Engineering</div></div>
+          <span class="badge badge-blue">Watch</span>
+        </div>
+        <div class="card-price">—</div>
+        <div class="card-change" style="color:var(--accent)">BLS 2026 Picks</div>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <strong>Why buzzing:</strong> Both in Bualuang Securities 2026 stock picks (energy/utilities theme). Utilities sector was one of the key drivers of last week's +1.6% market gain.
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:16px;">
+      <div class="alert-box blue">
+        <div class="alert-icon">📊</div>
         <div>
-          <span class="set-big">1,594.79</span>
-          <span class="set-chg">▲ +26.42</span>
-        </div>
-        <div class="set-sub">as of Jun 4 close · +1.7% this week</div>
-        <div class="mini-week">
-          <div class="mini-day">
-            <div class="md-lbl">Mon</div>
-            <div class="md-val up">1,588</div>
-            <div class="heat-mini"><div class="hm-bar" style="background:var(--green)" data-w="75"></div></div>
-          </div>
-          <div class="mini-day closed-d">
-            <div class="md-lbl">Tue</div>
-            <div class="md-val neu">–</div>
-            <div class="heat-mini"></div>
-          </div>
-          <div class="mini-day">
-            <div class="md-lbl">Wed</div>
-            <div class="md-val up">1,595</div>
-            <div class="heat-mini"><div class="hm-bar" style="background:var(--green)" data-w="35"></div></div>
-          </div>
-          <div class="mini-day today-d">
-            <div class="md-lbl">Thu</div>
-            <div class="md-val" style="color:var(--yellow)">TBD</div>
-            <div class="heat-mini"></div>
+          <div class="alert-title">Top Sectors by Trading Value — June 2, 2026 (confirmed data)</div>
+          <div class="alert-body">
+            <strong>1. Resources:</strong> 22,433.97M THB (+1.66%) &nbsp;|&nbsp;
+            <strong>2. Technology:</strong> 21,376.41M THB (+1.37%) &nbsp;|&nbsp;
+            <strong>3. Financials:</strong> 18,401.27M THB (+1.57%) &nbsp;|&nbsp;
+            <strong>Banking subsector:</strong> 15,535.05M THB (+1.88%)
+            <br>Source: <a href="https://today.line.me/th/v3/article/YaKEJG8" style="color:var(--accent);">StockRadars / LINE TODAY</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Quick Macro -->
-    <div class="side-section">
-      <div class="side-label">Market Snapshot</div>
-      <div class="stat-row"><span class="stat-lbl">S&amp;P 500</span><span class="stat-val up">7,584 ▲</span></div>
-      <div class="stat-row"><span class="stat-lbl">Nasdaq</span><span class="stat-val dn">26,831 ▼</span></div>
-      <div class="stat-row"><span class="stat-lbl">Brent Oil</span><span class="stat-val up">&gt;$100</span></div>
-      <div class="stat-row"><span class="stat-lbl">NVDA</span><span class="stat-val up">~$222<span class="unv">approx</span></span></div>
-      <div class="stat-row"><span class="stat-lbl">USD/THB</span><span class="stat-val neu">N/A<span class="unv">n/r</span></span></div>
-      <div class="stat-row"><span class="stat-lbl">SET 1-yr</span><span class="stat-val up">+38%<span class="vrd">✓</span></span></div>
-      <div class="stat-row"><span class="stat-lbl">SET Mkt Cap</span><span class="stat-val">฿19.9T</span></div>
+  <!-- ── SECTION 4: ALERTS ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <div class="section-title">Alerts &amp; Important News</div>
+      <div class="section-line"></div>
     </div>
 
-    <!-- Fund Flow -->
-    <div class="side-section">
-      <div class="side-label">Foreign Fund Flow</div>
-      <div class="stat-row"><span class="stat-lbl">Post-election 2026</span><span class="stat-val up">+฿31B<span class="vrd">✓</span></span></div>
-      <div class="stat-row"><span class="stat-lbl">5-yr cumulative</span><span class="stat-val dn">−฿248B</span></div>
-      <div class="stat-row"><span class="stat-lbl">Jun 4 energy flow</span><span class="stat-val up">Net BUY</span></div>
-      <div style="font-size:10px;color:var(--muted);margin-top:4px;line-height:1.5;padding:5px 6px;background:var(--yellow-dim);border:1px solid #4a3a00;border-radius:4px">
-        ⚠ Previous −108B YTD (Kaohoon) removed — link inactive. Use SET.or.th investor-type for current data.
+    <div class="alert-box red">
+      <div class="alert-icon">🚨</div>
+      <div>
+        <div class="alert-title">SET Market Surveillance — TRC (June 5, 2026)</div>
+        <div class="alert-body">SET officially placed <strong>TRC</strong> on the surveillance list after the company reported <strong>negative shareholders' equity in Q1/2026</strong> financial statements. Source: <a href="https://www.set.or.th/en/home" style="color:var(--accent);">SET.or.th</a></div>
       </div>
     </div>
 
-    <!-- Upcoming events -->
-    <div class="side-section">
-      <div class="side-label">Upcoming Events</div>
-      <div class="event-item"><div class="ev-date">Jun 11</div><div class="ev-text">SpaceX IPO pricing</div></div>
-      <div class="event-item"><div class="ev-date">Jun 12</div><div class="ev-text">SpaceX lists on Nasdaq (SPCX) at $135</div></div>
-      <div class="event-item"><div class="ev-date">Mid-Jun</div><div class="ev-text">Thailand cabinet formation expected</div></div>
-      <div class="event-item"><div class="ev-date">Jun 20-21</div><div class="ev-text">SET in the City @ Samyan Mitrtown</div></div>
-    </div>
-
-    <!-- Alerts mini -->
-    <div>
-      <div class="side-label">Alerts</div>
-      <div class="side-alert sa-red"><div class="sa-title">🏦 BOT Fee Cut Jun 3</div>19 bank fees cut · −฿5B sector impact · KBANK/SCB headwind</div>
-      <div class="side-alert sa-green"><div class="sa-title">🛒 Thais Help Thais Plus Jun 2</div>฿2B+ Day-1 spend · CPALL primary beneficiary</div>
-      <div class="side-alert sa-blue"><div class="sa-title">🚀 SpaceX IPO Jun 12</div>$75–80B raise · $135/share · Largest IPO in history</div>
-    </div>
-
-  </div><!-- /sidebar -->
-
-  <!-- ── Main content ────────────────────────────────── -->
-  <div id="main">
-
-    <!-- Alert banners -->
-    <div class="alert-row">
-      <div class="alert-banner ab-red">
-        <div class="ab-title">🏦 BOT Mandatory Fee Cut — Jun 3</div>
-        <div class="ab-body">Bank of Thailand cut 19 banking fees. Estimated −฿5B income impact across sector. Direct headwind: KBANK, SCB, BBL earnings forecasts revised down.</div>
-      </div>
-      <div class="alert-banner ab-green">
-        <div class="ab-title">🛒 "Thais Help Thais Plus" Launched — Jun 2</div>
-        <div class="ab-body">Co-payment stimulus. Day-1 spending &gt;฿2B. Direct beneficiaries: CPALL (7-Eleven), CPAXT (Makro/Lotus). Bullish for domestic consumption.</div>
-      </div>
-      <div class="alert-banner ab-blue">
-        <div class="ab-title">🚀 SpaceX IPO — June 12 Nasdaq Debut · $135/share · $75–80B raise</div>
-        <div class="ab-body">World's largest IPO. Ticker: SPCX. Extensive Thai finance coverage. Watch NVDA &amp; TSMC as AI supply chain plays. Source: Reuters, Yahoo Finance.</div>
+    <div class="alert-box red">
+      <div class="alert-icon">🚨</div>
+      <div>
+        <div class="alert-title">SET Market Surveillance — DELTA01P2608A (June 5, 2026)</div>
+        <div class="alert-body">DW warrant <strong>DELTA01P2608A</strong> also triggered SET Market Surveillance Measures on June 5, 2026. Source: <a href="https://www.set.or.th/en/home" style="color:var(--accent);">SET.or.th</a></div>
       </div>
     </div>
 
-    <!-- Thai stocks -->
-    <div class="grid-section">
-      <div class="grid-section-header">
-        <div class="gs-title">🇹🇭 Thai Stocks</div>
-        <div class="gs-count">5 stocks</div>
+    <div class="alert-box red">
+      <div class="alert-icon">⛔</div>
+      <div>
+        <div class="alert-title">SEC Thailand: Fake LINE OpenChat Investment Groups (Ongoing)</div>
+        <div class="alert-body">
+          SEC Thailand has officially warned that the following groups are <strong>NOT licensed or regulated</strong> by SEC and are impersonating legitimate brokers:<br><br>
+          <strong>— Line OpenChat: "คลับหุ้น CDC"</strong><br>
+          <strong>— Line: "Community Investor Group"</strong><br>
+          <strong>— Line claiming to be "SET Thailand"</strong><br>
+          <strong>— Line claiming to be "โบรกเกอร์ชาญชัย"</strong><br><br>
+          These groups are fraudulent. Do NOT follow their stock calls or send money.
+          Source: <a href="https://market.sec.or.th/public/idisc/en/Viewmore/invalert-head?PublicFlag=Y" style="color:var(--accent);">SEC Thailand Investor Alert</a>
+        </div>
       </div>
-      <div class="gs-filters">
-        <button class="gf-btn active" onclick="filterGrid('thai','all',this)">All</button>
-        <button class="gf-btn" onclick="filterGrid('thai','bull',this)">Bullish</button>
-        <button class="gf-btn" onclick="filterGrid('thai','mix',this)">Mixed</button>
-        <button class="gf-btn" onclick="filterGrid('thai','energy',this)">Energy</button>
-        <button class="gf-btn" onclick="filterGrid('thai','banking',this)">Banking</button>
-        <button class="gf-btn" onclick="filterGrid('thai','retail',this)">Retail</button>
-      </div>
-      <div class="stock-grid" id="thaiGrid">
-
-        <!-- GULF -->
-        <div class="scard" data-market="thai" data-sent="bull" data-sec="energy" onclick="toggleScard(this)">
-          <div class="scard-accent acc-green"></div>
-          <div class="scard-top">
-            <div class="sc-rank">#1</div>
-            <div class="sc-info">
-              <div class="sc-ticker">GULF</div>
-              <div class="sc-name">Gulf Energy Development PCL</div>
-              <div class="sc-badges">
-                <span class="badge b-set">SET</span>
-                <span class="badge b-bull">🟢 Bullish</span>
-                <span class="badge" style="background:#0a1520;border-color:#1a4a6a;color:#60a0d0;font-size:10px">Energy</span>
-              </div>
-            </div>
-          </div>
-          <div class="sc-price-row">
-            <span class="sc-price up">฿67.75</span>
-            <span class="sc-note">Jun 4 morning ⚠</span>
-          </div>
-          <div class="sc-bar-wrap"><div class="sc-bar" style="background:var(--green)" data-w="88"></div></div>
-          <div class="sc-why">Top traded Jun 4 (฿6,715M). Foreign fund flow into energy big-caps. Data Centre power contracts driving re-rating.</div>
-          <div class="scard-expanded">
-            <div class="exp-grid">
-              <div class="exp-item"><div class="exp-lbl">Jun 4 Volume</div><div class="exp-val">฿6,715M</div></div>
-              <div class="exp-item"><div class="exp-lbl">Sector</div><div class="exp-val">Energy / Power</div></div>
-              <div class="exp-item"><div class="exp-lbl">Foreign Flow Jun 4</div><div class="exp-val up">Net BUY</div></div>
-              <div class="exp-item"><div class="exp-lbl">Catalyst</div><div class="exp-val">FDI Data Centre</div></div>
-            </div>
-            <div class="exp-detail">GULF was highest-value traded stock Jun 4. Foreign investors flowed into energy per Krungsri Securities. New power supply contracts for data centre projects being signed in H1 2026 as Thailand attracts hyperscaler FDI.</div>
-            <div class="data-flag flag-warn">⚠ ฿67.75 = Jun 4 morning session only. Verify final close at set.or.th</div>
-          </div>
-        </div>
-
-        <!-- AOT -->
-        <div class="scard" data-market="thai" data-sent="bull" data-sec="travel" onclick="toggleScard(this)">
-          <div class="scard-accent acc-green"></div>
-          <div class="scard-top">
-            <div class="sc-rank">#2</div>
-            <div class="sc-info">
-              <div class="sc-ticker">AOT</div>
-              <div class="sc-name">Airports of Thailand PCL</div>
-              <div class="sc-badges">
-                <span class="badge b-set">SET</span>
-                <span class="badge b-bull">🟢 Bullish</span>
-                <span class="badge" style="background:#0a1520;border-color:#1a3a6a;color:#7090d0;font-size:10px">Travel</span>
-              </div>
-            </div>
-          </div>
-          <div class="sc-price-row">
-            <span class="sc-price up">+5.04%</span>
-            <span class="sc-note">Jun 4 AM session ⚠</span>
-          </div>
-          <div class="sc-bar-wrap"><div class="sc-bar" style="background:var(--green)" data-w="72"></div></div>
-          <div class="sc-why">Strongest mover Jun 4 morning. Tourism recovery + concession renewal expectations ahead of new cabinet.</div>
-          <div class="scard-expanded">
-            <div class="exp-grid">
-              <div class="exp-item"><div class="exp-lbl">Jun 4 Morning Chg</div><div class="exp-val up">+5.04%</div></div>
-              <div class="exp-item"><div class="exp-lbl">Sector</div><div class="exp-val">Aviation</div></div>
-              <div class="exp-item"><div class="exp-lbl">Catalyst</div><div class="exp-val">Tourism rebound</div></div>
-              <div class="exp-item"><div class="exp-lbl">Analyst view</div><div class="exp-val">Upward re-rate pending</div></div>
-            </div>
-            <div class="exp-detail">AOT surged in Jun 4 AM session. International arrivals recovering toward pre-COVID. Kasikorn Securities flagged potential upward re-rating of concession income once new government officially forms mid-June.</div>
-            <div class="data-flag flag-warn">⚠ +5.04% is midday data only. Final daily close not confirmed.</div>
-          </div>
-        </div>
-
-        <!-- CPALL -->
-        <div class="scard" data-market="thai" data-sent="bull" data-sec="retail" onclick="toggleScard(this)">
-          <div class="scard-accent acc-green"></div>
-          <div class="scard-top">
-            <div class="sc-rank">#3</div>
-            <div class="sc-info">
-              <div class="sc-ticker">CPALL</div>
-              <div class="sc-name">CP All PCL (7-Eleven Thailand)</div>
-              <div class="sc-badges">
-                <span class="badge b-set">SET</span>
-                <span class="badge b-bull">🟢 Bullish</span>
-                <span class="badge" style="background:#1a100a;border-color:#5a3010;color:#c08040;font-size:10px">Retail</span>
-              </div>
-            </div>
-          </div>
-          <div class="sc-price-row">
-            <span class="sc-price">฿?</span>
-            <span class="sc-note">Price not retrieved ⚠</span>
-          </div>
-          <div class="sc-bar-wrap"><div class="sc-bar" style="background:var(--green)" data-w="65"></div></div>
-          <div class="sc-why">Primary beneficiary of Thais Help Thais Plus. ฿2B+ Day-1 spending. InnovestX June monthly top pick.</div>
-          <div class="scard-expanded">
-            <div class="exp-grid">
-              <div class="exp-item"><div class="exp-lbl">Catalyst</div><div class="exp-val">Thais Help Thais Plus</div></div>
-              <div class="exp-item"><div class="exp-lbl">Day-1 stimulus</div><div class="exp-val up">&gt;฿2B spend</div></div>
-              <div class="exp-item"><div class="exp-lbl">Broker pick</div><div class="exp-val">InnovestX Jun 2026</div></div>
-              <div class="exp-item"><div class="exp-lbl">Sector</div><div class="exp-val">Consumer / Retail</div></div>
-            </div>
-            <div class="exp-detail">Government co-payment scheme launched Jun 2 with 7-Eleven accepting digital vouchers. Also benefits CPAXT (Makro/Lotus's). Domestic consumption recovery theme + tourism spending through convenience channels.</div>
-            <div class="data-flag flag-ok">✓ Catalyst confirmed — Thansettakij Jun 2026 + government announcement</div>
-          </div>
-        </div>
-
-        <!-- KBANK -->
-        <div class="scard" data-market="thai" data-sent="mix" data-sec="banking" onclick="toggleScard(this)">
-          <div class="scard-accent acc-yellow"></div>
-          <div class="scard-top">
-            <div class="sc-rank">#4</div>
-            <div class="sc-info">
-              <div class="sc-ticker">KBANK</div>
-              <div class="sc-name">Kasikornbank PCL</div>
-              <div class="sc-badges">
-                <span class="badge b-set">SET</span>
-                <span class="badge b-mix">🟡 Mixed</span>
-                <span class="badge" style="background:#0a1020;border-color:#1a3050;color:#7090b0;font-size:10px">Banking</span>
-              </div>
-            </div>
-          </div>
-          <div class="sc-price-row">
-            <span class="sc-price" style="color:var(--yellow)">~7.8%</span>
-            <span class="sc-note">div yield ⚠ est.</span>
-          </div>
-          <div class="sc-bar-wrap"><div class="sc-bar" style="background:var(--yellow)" data-w="50"></div></div>
-          <div class="sc-why">High ~7.8% div yield attractive. BUT BOT fee cut Jun 3 = −฿5B sector income. Sentiment split between yield buyers and earnings bears.</div>
-          <div class="scard-expanded">
-            <div class="exp-grid">
-              <div class="exp-item"><div class="exp-lbl">Div Yield (est.)</div><div class="exp-val">~7.8%</div></div>
-              <div class="exp-item"><div class="exp-lbl">SETHD weight</div><div class="exp-val">Top 5</div></div>
-              <div class="exp-item"><div class="exp-lbl">BOT headwind</div><div class="exp-val dn">−฿5B sector</div></div>
-              <div class="exp-item"><div class="exp-lbl">Peer impact</div><div class="exp-val dn">SCB, BBL, KTB</div></div>
-            </div>
-            <div class="exp-detail">KBANK sits in SETHD index. High yield attracts dividend investors in the rate-cutting cycle. However, BOT's mandatory 19 fee cuts announced Jun 3 reduce bank income — analysts revising H2 2026 earnings estimates downward.</div>
-            <div class="data-flag flag-warn">⚠ ~7.8% from DividendMax Jun 2026. Verify against SET official dividend calendar.</div>
-          </div>
-        </div>
-
-        <!-- PTTEP -->
-        <div class="scard" data-market="thai" data-sent="bull" data-sec="energy" onclick="toggleScard(this)">
-          <div class="scard-accent acc-green"></div>
-          <div class="scard-top">
-            <div class="sc-rank">#5</div>
-            <div class="sc-info">
-              <div class="sc-ticker">PTTEP</div>
-              <div class="sc-name">PTT Exploration &amp; Production PCL</div>
-              <div class="sc-badges">
-                <span class="badge b-set">SET</span>
-                <span class="badge b-bull">🟢 Bullish</span>
-                <span class="badge" style="background:#0a1520;border-color:#1a4a6a;color:#60a0d0;font-size:10px">Energy</span>
-              </div>
-            </div>
-          </div>
-          <div class="sc-price-row">
-            <span class="sc-price up">6.12%</span>
-            <span class="sc-note">div yield ✓</span>
-          </div>
-          <div class="sc-bar-wrap"><div class="sc-bar" style="background:var(--green)" data-w="60"></div></div>
-          <div class="sc-why">Verified 6.12% div yield (SET factsheet). SET published 160-company dividend list Jun 1. Oil above $100 from US-Iran tensions supports earnings.</div>
-          <div class="scard-expanded">
-            <div class="exp-grid">
-              <div class="exp-item"><div class="exp-lbl">Div Yield</div><div class="exp-val up">6.12%</div></div>
-              <div class="exp-item"><div class="exp-lbl">SETHD</div><div class="exp-val">Top weight</div></div>
-              <div class="exp-item"><div class="exp-lbl">Oil price</div><div class="exp-val up">&gt;$100/bbl</div></div>
-              <div class="exp-item"><div class="exp-lbl">SET list</div><div class="exp-val">160 divs, Jun 1</div></div>
-            </div>
-            <div class="exp-detail">PTTEP featured in SET's 2026 dividend stock list published Jun 1. US-Iran tensions (strikes Jun 3) keep Brent above $100/bbl, supporting E&amp;P earnings visibility. Note: previous 8.33% yield was Finnomena Apr 2025 — stale and removed.</div>
-            <div class="data-flag flag-ok">✓ 6.12% verified — SET factsheet + Morningstar 2026. Stale Finnomena 8.33% removed.</div>
-          </div>
-        </div>
-
-      </div><!-- /thaiGrid -->
     </div>
 
-    <!-- Offshore stocks -->
-    <div class="market-divider">
-      <div class="md-line"></div>
-      <div class="md-label">🌍 Offshore Stocks — Discussed by Thai Investors</div>
-      <div class="md-line"></div>
+    <div class="alert-box yellow">
+      <div class="alert-icon">📉</div>
+      <div>
+        <div class="alert-title">Historical Alert: Circuit Breaker — March 5, 2026</div>
+        <div class="alert-body">For context: SET triggered a <strong>Level 1 Circuit Breaker</strong> on March 5, 2026, after the index plummeted <strong>8%</strong> and closed at 1,384.61 (-5.58%) amid war fears. The index has since recovered ~+14% to current levels (~1,580). Source: <a href="https://www.facebook.com/nbtworld/videos/set-index-plummets-8-triggering-circuit-breaker/1461275028938937" style="color:var(--yellow);">NBT World</a></div>
+      </div>
     </div>
 
-    <div class="grid-section">
-      <div class="grid-section-header">
-        <div class="gs-title">Global Markets</div>
-        <div class="gs-count">3 stocks</div>
-        <div style="font-size:11px;color:var(--muted);margin-left:auto">Accessible via DR on SET · moomoo US trading · Jitta</div>
+    <div class="alert-box blue">
+      <div class="alert-icon">🏦</div>
+      <div>
+        <div class="alert-title">BOT Rate Cut Impact — Analysts Upgrade SET Target</div>
+        <div class="alert-body">
+          Bank of Thailand cut policy rate to <strong>1.00%</strong> (25 bps cut) — lowest in nearly 4 years.<br>
+          <strong>Koraphat Vorachet (KSS):</strong> Upgraded SET target by +60 pts (rate cut) + +80 pts (EPS upgrade from 90 → 95 THB).<br>
+          <strong>InnovestX Securities:</strong> Another cut possible in August 2026 → rate could reach 0.75% by year-end.<br>
+          Sub-potential GDP growth (~1.5%) + negative inflation = space for further easing.
+          Source: <a href="https://www.bangkokpost.com/business/investment/3206043/analysts-see-buoyant-set-following-rate-cut" style="color:var(--accent);">Bangkok Post</a>
+        </div>
       </div>
-      <div class="gs-filters">
-        <button class="gf-btn active" onclick="filterGrid('offshore','all',this)">All</button>
-        <button class="gf-btn" onclick="filterGrid('offshore','bull',this)">Bullish</button>
-        <button class="gf-btn" onclick="filterGrid('offshore','ipo',this)">IPO Buzz</button>
-        <button class="gf-btn" onclick="filterGrid('offshore','ai',this)">AI / Chips</button>
-      </div>
-      <div class="stock-grid" id="offshoreGrid">
-
-        <!-- NVDA -->
-        <div class="scard" data-market="offshore" data-sent="bull" data-sec="ai" onclick="toggleScard(this)">
-          <div class="scard-accent acc-green"></div>
-          <div class="scard-top">
-            <div class="sc-rank">#1</div>
-            <div class="sc-info">
-              <div class="sc-ticker">NVDA</div>
-              <div class="sc-name">NVIDIA Corporation</div>
-              <div class="sc-badges">
-                <span class="badge b-us">NASDAQ</span>
-                <span class="badge b-bull">🟢 Bullish</span>
-                <span class="badge" style="background:#100a20;border-color:#3a1a60;color:#9060d0;font-size:10px">AI / Chips</span>
-              </div>
-            </div>
-          </div>
-          <div class="sc-price-row">
-            <span class="sc-price up">~$222</span>
-            <span class="sc-note">approximate ⚠</span>
-          </div>
-          <div class="sc-bar-wrap"><div class="sc-bar" style="background:var(--green)" data-w="80"></div></div>
-          <div class="sc-why">#1 offshore discussed. SpaceX–Anthropic Colossus deal runs on NVDA GPUs. Analyst targets $255–$270. eFinanceThai dedicated Thai video.</div>
-          <div class="scard-expanded">
-            <div class="exp-grid">
-              <div class="exp-item"><div class="exp-lbl">Approx. Price</div><div class="exp-val">~$222.81</div></div>
-              <div class="exp-item"><div class="exp-lbl">Analyst target</div><div class="exp-val up">$255–$270</div></div>
-              <div class="exp-item"><div class="exp-lbl">YTD return</div><div class="exp-val up">~+38–42%</div></div>
-              <div class="exp-item"><div class="exp-lbl">Thai access</div><div class="exp-val">DR on SET / moomoo</div></div>
-            </div>
-            <div class="exp-detail">NVDA is the dominant AI chip stock. SpaceX's Colossus 1 supercomputer (linked to Anthropic deal) uses NVDA GPUs. Every major AI data centre contract (SpaceX, Anthropic, Meta) flows through NVDA order books. Daiwa raised target to $255, Argus to $270 in May 2026. eFinanceThai produced Thai-language video with high engagement this week.</div>
-            <div class="data-flag flag-warn">⚠ ~$222 is a real-time snapshot (Investing.com). Exact Jun 2–4 daily closes not retrieved. Verify on Yahoo Finance NVDA history before use.</div>
-          </div>
-        </div>
-
-        <!-- SpaceX SPCX -->
-        <div class="scard" data-market="offshore" data-sent="bull" data-sec="ipo ai" onclick="toggleScard(this)">
-          <div class="scard-accent acc-blue"></div>
-          <div class="scard-top">
-            <div class="sc-rank">#2</div>
-            <div class="sc-info">
-              <div class="sc-ticker">SPCX</div>
-              <div class="sc-name">SpaceX — Pre-IPO (lists Jun 12)</div>
-              <div class="sc-badges">
-                <span class="badge b-us">NASDAQ</span>
-                <span class="badge b-ipo">🚀 IPO Buzz</span>
-                <span class="badge" style="background:#100a20;border-color:#3a1a60;color:#9060d0;font-size:10px">AI / Space</span>
-              </div>
-            </div>
-          </div>
-          <div class="sc-price-row">
-            <span class="sc-price" style="color:var(--blue)">$135</span>
-            <span class="sc-note">IPO target price ✓</span>
-          </div>
-          <div class="sc-bar-wrap"><div class="sc-bar" style="background:var(--blue)" data-w="95"></div></div>
-          <div class="sc-why">World's largest IPO ever ($75–80B). June 12 Nasdaq. Thai finance channels going viral. Elon Musk retains 85.1% voting. NOT tradeable until Jun 12.</div>
-          <div class="scard-expanded">
-            <div class="exp-grid">
-              <div class="exp-item"><div class="exp-lbl">Listing Date</div><div class="exp-val" style="color:var(--blue)">June 12, 2026</div></div>
-              <div class="exp-item"><div class="exp-lbl">IPO Price</div><div class="exp-val up">$135 / share</div></div>
-              <div class="exp-item"><div class="exp-lbl">Target Raise</div><div class="exp-val up">$75–80 Billion</div></div>
-              <div class="exp-item"><div class="exp-lbl">Valuation</div><div class="exp-val">~$2 Trillion</div></div>
-            </div>
-            <div class="exp-detail">SpaceX will be the largest IPO in history — beating Saudi Aramco's $29.4B by nearly 3×. Thai finance community extensively discussing this all week. Key risk: dual-class share structure = Musk 85.1% voting power. Key angle: Colossus AI supercomputer + Anthropic cloud deal. Thai investors can access via moomoo US IPO allocation or post-listing market order.</div>
-            <div class="data-flag flag-ok">✓ Fully verified: Reuters (May 15), Yahoo Finance, BigGo Finance, WSJ (S-1 filing May 20). Thai coverage: eFinanceThai, Kaohoon TikTok, multiple Instagram.</div>
-          </div>
-        </div>
-
-        <!-- TSMC TSM -->
-        <div class="scard" data-market="offshore" data-sent="bull" data-sec="ai" onclick="toggleScard(this)">
-          <div class="scard-accent acc-green"></div>
-          <div class="scard-top">
-            <div class="sc-rank">#3</div>
-            <div class="sc-info">
-              <div class="sc-ticker">TSM</div>
-              <div class="sc-name">Taiwan Semiconductor (TSMC)</div>
-              <div class="sc-badges">
-                <span class="badge b-us">NYSE ADR</span>
-                <span class="badge b-bull">🟢 Bullish</span>
-                <span class="badge" style="background:#100a20;border-color:#3a1a60;color:#9060d0;font-size:10px">AI Foundry</span>
-              </div>
-            </div>
-          </div>
-          <div class="sc-price-row">
-            <span class="sc-price up">+2.42%</span>
-            <span class="sc-note">Jun 2 snapshot ⚠</span>
-          </div>
-          <div class="sc-bar-wrap"><div class="sc-bar" style="background:var(--green)" data-w="58"></div></div>
-          <div class="sc-why">Sole manufacturer of NVDA Blackwell GPUs. Every AI data centre deal = TSMC wafer orders. "Picks &amp; shovels" play alongside NVDA.</div>
-          <div class="scard-expanded">
-            <div class="exp-grid">
-              <div class="exp-item"><div class="exp-lbl">Jun 2 move</div><div class="exp-val up">+2.42%</div></div>
-              <div class="exp-item"><div class="exp-lbl">Role</div><div class="exp-val">Sole NVDA foundry</div></div>
-              <div class="exp-item"><div class="exp-lbl">Thai access</div><div class="exp-val">DR on SET / moomoo</div></div>
-              <div class="exp-item"><div class="exp-lbl">Catalyst</div><div class="exp-val">SpaceX/AI demand</div></div>
-            </div>
-            <div class="exp-detail">TSMC manufactures all of NVIDIA's H100/H200/Blackwell AI chips. The SpaceX–Anthropic Colossus deal directly increases NVDA orders which flow to TSMC production. ASML hiring 1,000 more in Taiwan (May 2026) signals sustained foundry capacity build-out. Thai investors access via SET DR or moomoo global trading.</div>
-            <div class="data-flag flag-warn">⚠ +2.42% from Motley Fool Jun 2 article — one intraday snapshot. Not a confirmed daily close. Verify on Yahoo Finance TSM.</div>
-          </div>
-        </div>
-
-      </div><!-- /offshoreGrid -->
     </div>
 
-    <!-- Bottom tabs -->
-    <div id="bottom-area">
-      <div class="tab-bar">
-        <div class="tab-btn active" onclick="switchTab('themes',this)">📊 Themes</div>
-        <div class="tab-btn" onclick="switchTab('social',this)">💬 Social</div>
-        <div class="tab-btn" onclick="switchTab('opps',this)">📱 moomoo Opps</div>
-        <div class="tab-btn" onclick="switchTab('integrity',this)">⚖️ Data Integrity</div>
-        <div class="tab-btn" onclick="switchTab('sources',this)">🔗 Sources</div>
+    <div class="alert-box blue">
+      <div class="alert-icon">🌍</div>
+      <div>
+        <div class="alert-title">Middle East Situation — Key Risk for Week Jun 8–12</div>
+        <div class="alert-body">Kasikorn Bank's official weekly outlook for <strong>June 8–12, 2026</strong> specifically flagged the Middle East situation as the key external risk to monitor for Thai stocks. Full analysis on <a href="https://pantip.com/topic/44117764" style="color:var(--accent);">Pantip</a> — <em>note: article body was not publicly accessible at time of data pull.</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 5: MACRO + UPCOMING EVENTS ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <div class="section-title">Macro Context &amp; Upcoming Events</div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="cards-grid" style="margin-bottom:24px;">
+      <div class="card">
+        <div class="card-header"><div class="card-ticker" style="font-size:14px;">BOT Policy Rate</div></div>
+        <div class="card-price">1.00%</div>
+        <div class="card-meta" style="margin-top:6px;">Cut to 4-year low in 2026. April MPC: <strong>held</strong>. Room for further cut in August (InnovestX).</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-ticker" style="font-size:14px;">Thailand GDP 2026</div></div>
+        <div class="card-price">~1.5%</div>
+        <div class="card-meta" style="margin-top:6px;">Sub-potential growth. Weak purchasing power + trade uncertainty. Negative inflation environment.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-ticker" style="font-size:14px;">SET 1-Year Gain</div></div>
+        <div class="card-price">+39.26%</div>
+        <div class="card-meta" style="margin-top:6px;">Driven by: election clarity (Feb 8 Bhumjaithai win), BOT rate cuts, post-circuit-breaker recovery rally.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-ticker" style="font-size:14px;">US Market Trend</div></div>
+        <div class="card-price">+9 Weeks</div>
+        <div class="card-meta" style="margin-top:6px;">S&amp;P 500 up 9 consecutive weeks (AI infrastructure + Q1/2026 EPS +28.6% YoY). Positive spillover to SET.</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Significance for Thai Investors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:var(--green);">Jun 9, 2026 — TODAY</strong></td>
+            <td>3rd Annual Thailand Investors Forum — Bangkok</td>
+            <td>Institutional + private wealth gathering; macro, FX, portfolio topics. Could shape near-term institutional flows. <a href="https://www.marketsgroup.org/forums/thailand-investors-forum" style="color:var(--accent);font-size:11px;">→ Link</a></td>
+          </tr>
+          <tr>
+            <td><strong>Jun 24, 2026</strong></td>
+            <td>BOT Monetary Policy Committee (MPC) — Rate Decision</td>
+            <td>3rd MPC of 2026. Market watching if BOT holds at 1.00% or cuts again. A cut could trigger another SET re-rating rally. <a href="https://www.bot.or.th/en/our-roles/monetary-policy/mpc-meeting.html" style="color:var(--accent);font-size:11px;">→ BOT</a></td>
+          </tr>
+          <tr>
+            <td><strong>Jul 8, 2026</strong></td>
+            <td>BOT MPC Minutes Published + Q2 Monetary Policy Report</td>
+            <td>Policy guidance and BOT economic outlook — key input for second-half investment strategy.</td>
+          </tr>
+          <tr>
+            <td><strong>Jul 15, 2026</strong></td>
+            <td>BOT Monetary Policy Forum (Analyst Briefing)</td>
+            <td>BOT presents to analysts with slides — directly impacts market expectations and broker research.</td>
+          </tr>
+          <tr>
+            <td><strong>Aug 4, 2026</strong></td>
+            <td>LY Corporation (4689.T) Quarterly Earnings</td>
+            <td>Parent company of LINE app + LINE BK JV. Results signal health of LINE ecosystem in Thailand / Asia. <a href="https://finance.yahoo.com/quote/4689.T" style="color:var(--accent);font-size:11px;">→ Yahoo Finance</a></td>
+          </tr>
+          <tr>
+            <td><strong>Aug 26, 2026</strong></td>
+            <td>BOT MPC Rate Decision — 4th Meeting</td>
+            <td>Potential cut to 0.75% (InnovestX forecast). If confirmed, significant bullish catalyst for equities and property sector.</td>
+          </tr>
+          <tr>
+            <td><strong>Oct 12–18, 2026</strong></td>
+            <td>IMF / World Bank Annual Meetings — Bangkok</td>
+            <td>Thailand hosts global financial leadership. Major reputational event; expected to attract foreign capital attention. <a href="https://www.am2026thailand.go.th" style="color:var(--accent);font-size:11px;">→ am2026thailand.go.th</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- ── SECTION 6: LINE — DEDICATED SECTION ── -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number" style="background:linear-gradient(135deg,#00b900,#007700);">L</div>
+      <div class="section-title">LINE — Dedicated Section</div>
+      <div class="section-line" style="background:rgba(0,185,0,0.3);"></div>
+    </div>
+
+    <div class="line-header">
+      <div class="line-logo">L</div>
+      <div class="line-header-text">
+        <div class="line-header-title">LINE Ecosystem in the Thai Investment World</div>
+        <div class="line-header-sub">Covers: LINE BK (financial product) · LY Corporation (stock 4689.T) · LINE as an investor information platform</div>
+      </div>
+    </div>
+
+    <!-- LINE BK -->
+    <div class="line-subsection">
+      <div class="line-subsection-title">A · LINE BK — 2026 Business Update (Confirmed Official Data)</div>
+
+      <div style="margin-bottom:12px;">
+        <div class="alert-body" style="font-size:12px;color:var(--muted);background:rgba(0,185,0,0.04);border:1px solid rgba(0,185,0,0.15);border-radius:8px;padding:10px 14px;margin-bottom:14px;">
+          <strong style="color:var(--text);">What is LINE BK?</strong> A joint venture between <strong style="color:var(--text);">KASIKORNBANK</strong> (via KASIKORN Vision subsidiary) and <strong style="color:var(--text);">LINE Financial Asia</strong> (subsidiary of LY Corporation). Thailand's first "social banking" platform — banking, lending, and insurance brokerage inside the LINE app. <em>LINE BK is NOT a listed stock on SET.</em>
+        </div>
       </div>
 
-      <div id="tab-themes" class="tab-pane active">
-        <div class="theme-card">
-          <div class="tc-num">THEME 01</div>
-          <div class="tc-title">AI + Data Centre FDI — Thai &amp; Global converge</div>
-          <div class="tc-body">Thailand is attracting hyperscaler FDI for Data Centres, benefiting domestic stocks (GULF for power, ADVANC for connectivity, WHA/AMATA for land). Globally, SpaceX–Anthropic Colossus supercomputer deal pushed NVDA and TSMC. Both narratives are identical: AI infrastructure demand.</div>
-          <div class="tc-stocks"><span class="tc-chip">GULF</span><span class="tc-chip">ADVANC</span><span class="tc-chip">WHA</span><span class="tc-chip">AMATA</span><span class="tc-chip">NVDA</span><span class="tc-chip">TSM</span></div>
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="stat-tile-label">Total Customers (2025)</div>
+          <div class="stat-tile-val">8.4M</div>
+          <div class="stat-tile-sub">+14% Year-on-Year</div>
         </div>
-        <div class="theme-card">
-          <div class="tc-num">THEME 02</div>
-          <div class="tc-title">SpaceX IPO Capital Effect — Will it drain SET?</div>
-          <div class="tc-body">Thai investors are debating whether the $75–80B SpaceX fundraise triggers global fund rotation out of Asian EM. BigGo Finance flagged "capital-siphoning" risk for NVDA, Samsung, SK Hynix. Most Thai analysts think SET impact is minimal for retail, but institutional funds holding US tech may rebalance.</div>
-          <div class="tc-stocks"><span class="tc-chip">SPCX</span><span class="tc-chip">NVDA</span></div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Loan Customers</div>
+          <div class="stat-tile-val">~900K</div>
+          <div class="stat-tile-sub">+20% Year-on-Year</div>
         </div>
-        <div class="theme-card">
-          <div class="tc-num">THEME 03</div>
-          <div class="tc-title">High-Dividend SETHD Theme — 4% yield vs. global rates</div>
-          <div class="tc-body">SET dividend yield ~4% is attracting passive fund interest in the rate-cutting environment. SET published 160-company dividend list Jun 1 (max yield 12.26%). BOT fee cut creates headwind for bank dividends specifically. PTTEP and energy yield names outperforming bank yield names this week.</div>
-          <div class="tc-stocks"><span class="tc-chip">PTTEP</span><span class="tc-chip">KBANK</span><span class="tc-chip">TISCO</span><span class="tc-chip">SCB</span></div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Outstanding Loans</div>
+          <div class="stat-tile-val">&gt;27B THB</div>
+          <div class="stat-tile-sub">Healthy portfolio quality</div>
         </div>
-        <div class="theme-card">
-          <div class="tc-num">THEME 04</div>
-          <div class="tc-title">Government Formation — Mid-June cabinet expected</div>
-          <div class="tc-body">Bhumjaithai won Feb 9 election. PM Anutin Charnvirakul cabinet formation expected mid-June 2026. SET surged +3.5% on election day (+฿100B volume). Policy expectations: EV subsidies, digital economy, domestic stimulus. Formal cabinet announcement seen as re-rating confirmation.</div>
-          <div class="tc-stocks"><span class="tc-chip">AOT</span><span class="tc-chip">CPALL</span><span class="tc-chip">WHA</span></div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Revenue Growth</div>
+          <div class="stat-tile-val">+35%</div>
+          <div class="stat-tile-sub">YoY increase</div>
         </div>
-        <div class="theme-card">
-          <div class="tc-num">THEME 05</div>
-          <div class="tc-title">SCC / Petrochemical — China dumping headwind</div>
-          <div class="tc-body">SCC dropped from top 5 this week as more acute themes dominated. Chinese petrochemical exports undercut SCC margins. Construction slowdown (GDP 1.6–1.7% in 2026) reduces cement demand. Bearish sentiment. Moved to themes only.</div>
-          <div class="tc-stocks"><span class="tc-chip">SCC</span></div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Insurance AFYP</div>
+          <div class="stat-tile-val">+30%</div>
+          <div class="stat-tile-sub">Growth</div>
         </div>
-        <div class="theme-card">
-          <div class="tc-num">THEME 06</div>
-          <div class="tc-title">US–Iran Tensions — Oil above $100, geopolitical risk</div>
-          <div class="tc-body">US strikes on Iran (Jun 3) pushed Brent above $100/bbl. Positive for PTTEP earnings, negative for oil-importing sectors. Broader market volatility concern. Bloomberg Jun 3 cover story.</div>
-          <div class="tc-stocks"><span class="tc-chip">PTTEP</span><span class="tc-chip">PTT</span></div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Net Profit</div>
+          <div class="stat-tile-val">✓ Achieved</div>
+          <div class="stat-tile-sub">NPL target ≤3%</div>
         </div>
-      </div><!-- /themes -->
+      </div>
 
-      <div id="tab-social" class="tab-pane">
-        <div class="thread-card">
-          <div class="th-source">eFinanceThai Facebook Video</div>
-          <div class="th-title">"NVIDIA งบดีเกินคาด SpaceX จ่อ IPO ใหญ่สุดในโลก — 2 หุ้นที่กำลังเขย่าโลกเทค นักลงทุนไทยต้องรู้อะไรบ้าง?"</div>
-          <div class="th-meta">High engagement · Jun 2026 · Tags: NVDA, SpaceX, TSMC</div>
-        </div>
-        <div class="thread-card">
-          <div class="th-source">Thai Finance YouTube (ดร.วิศิษฐ์ / InnovestX)</div>
-          <div class="th-title">"SpaceX IPO — วิกฤตหรือโอกาส? แพงจริงไหม $135 ต่อหุ้น?"</div>
-          <div class="th-meta">Very high engagement · Jun 2026 · Risk/opportunity debate</div>
-        </div>
-        <div class="thread-card">
-          <div class="th-source">WealthyThai Facebook · Jun 4, 2026</div>
-          <div class="th-title">"SET ยืน 1,600 ไม่ไหว ปิดบวกที่ 1,595 จุด — Fund Flow ไหลเข้าหุ้น Big Cap กลุ่มพลังงาน"</div>
-          <div class="th-meta">Krungsri Securities analysis · GULF, PTT mentioned · Foreign buying confirmed</div>
-        </div>
-        <div class="thread-card">
-          <div class="th-source">Money &amp; Banking Channel Instagram · Jun 4</div>
-          <div class="th-title">"หุ้นไทยทะลุ 1,600 จุด! — GULF 67.75 · AOT +5.04% · SCB +4% · DELTA +1.82%"</div>
-          <div class="th-meta">Morning session top 5 reported · High shares</div>
-        </div>
-        <div class="thread-card">
-          <div class="th-source">Finnomena · Updated 2026</div>
-          <div class="th-title">"DR หุ้นนอก 2026 — ซื้อ NVDA/TSMC ในตลาดไทย ไม่ต้องเสียภาษี Capital Gain"</div>
-          <div class="th-meta">Popular investor guide · Depositary Receipts explained · Very high traffic</div>
-        </div>
-        <div class="thread-card">
-          <div class="th-source">Thai finance forums · Jun 3</div>
-          <div class="th-title">"BOT ตัดค่าธรรมเนียม 19 รายการ — กระทบ KBANK SCB BBL KTB มากแค่ไหน?"</div>
-          <div class="th-meta">Hot discussion · Mixed sentiment on banking sector · Earnings revision debate</div>
-        </div>
-        <div class="thread-card">
-          <div class="th-source">Thai YouTube · "เปิดหุ้นที่มีโอกาสแรงกว่า NVDA"</div>
-          <div class="th-title">"RKLB จะเป็นไงถ้า SpaceX IPO? — เปรียบ NVDA vs RKLB vs TSMC หลัง SpaceX เข้าตลาด"</div>
-          <div class="th-meta">Rocket Lab (RKLB) discussed as SpaceX-adjacency play · Growing interest</div>
-        </div>
-        <div class="thread-card">
-          <div class="th-source">SET Official</div>
-          <div class="th-title">"SET in the City 2026 — งานลงทุนสำหรับคนรุ่นใหม่ June 20–21 @ Samyan Mitrtown Hall"</div>
-          <div class="th-meta">Event announced · Multiple brokers confirmed participation · moomoo attendance likely</div>
-        </div>
-      </div><!-- /social -->
-
-      <div id="tab-opps" class="tab-pane">
-        <div class="opp-card">
-          <div class="opp-icon">🚀</div>
-          <div class="opp-title">SpaceX IPO Explainer — HIGH URGENCY before Jun 12</div>
-          <div class="opp-body">"วิธีซื้อหุ้น SPCX ผ่าน moomoo" — how Thai retail investors can participate via moomoo US trading. Push notification: "🚨 SpaceX IPO June 12 — world's largest IPO. Set alert now!"</div>
-        </div>
-        <div class="opp-card">
-          <div class="opp-icon">🤖</div>
-          <div class="opp-title">NVDA vs TSMC Comparison Card</div>
-          <div class="opp-body">"AI สายพาน — NVDA ออกแบบ TSMC ผลิต" — which should Thai investors hold? Infographic format. Target: Thai investors wanting AI exposure but unsure which stock to choose.</div>
-        </div>
-        <div class="opp-card">
-          <div class="opp-icon">📋</div>
-          <div class="opp-title">DR Tax Advantage Guide (Refreshed)</div>
-          <div class="opp-body">"หุ้น DR คืออะไร? ซื้อ NVDA บน SET ได้เลย ไม่ต้องเสีย Capital Gain" — refresh the Finnomena guide with moomoo's own version. High search intent this week.</div>
-        </div>
-        <div class="opp-card">
-          <div class="opp-icon">⚡</div>
-          <div class="opp-title">GULF + Data Centre Deep Dive</div>
-          <div class="opp-body">"ทำไม GULF ถึงเป็นผู้ชนะจาก AI?" — explain how Data Centre FDI translates to power infrastructure demand. Bridge Thai and global AI narrative for domestic investors.</div>
-        </div>
-        <div class="opp-card">
-          <div class="opp-icon">🏦</div>
-          <div class="opp-title">BOT Fee Cut Educational Content</div>
-          <div class="opp-body">"ธปท.ตัด 19 ค่าธรรมเนียม กระทบหุ้นธนาคารอย่างไร?" — neutral education, not buy/sell recommendation. Shows moomoo understands Thai regulatory context. Build trust with local audience.</div>
-        </div>
-        <div class="opp-card">
-          <div class="opp-icon">💰</div>
-          <div class="opp-title">160 Dividend Stocks Screen</div>
-          <div class="opp-body">"160 หุ้นปันผล SET 2026 — PTTEP, KBANK, TISCO เลือกยังไง?" using SET's June 1 list. Interactive stock screener within moomoo app highlighting yields + data gaps transparently.</div>
-        </div>
-        <div class="opp-card">
-          <div class="opp-icon">🏟️</div>
-          <div class="opp-title">SET in the City Presence — Jun 20–21</div>
-          <div class="opp-body">moomoo should have a booth at SET in the City @ Samyan Mitrtown Hall. Pre-event content: "พบกันที่ SET in the City — มาเปิดบัญชี moomoo รับ SpaceX IPO ก่อนใคร"</div>
-        </div>
-      </div><!-- /opps -->
-
-      <div id="tab-integrity">
-        <table class="int-table">
+      <div class="table-wrap">
+        <table>
           <thead>
             <tr>
-              <th style="width:120px">Status</th>
-              <th style="width:200px">Data Point</th>
-              <th>Detail / Source</th>
+              <th>2026 Strategy Pillar</th>
+              <th>Details</th>
+              <th>Target</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>SET Jun 2 close: 1,588.06</td><td>WSJ historical + WeR News/Line Today + SET official</td></tr>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>SET Jun 4 close: 1,594.79 (+0.42%)</td><td>SET official Twitter @SET_Thailand_EN + WSJ + Settrade</td></tr>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>SET Jun 4 intraday high: 1,607.25</td><td>WSJ market data table</td></tr>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>Jun 3 = Market holiday (Queen Suthida's Birthday)</td><td>No Jun 3 entry in WSJ SET historical data; confirmed gap</td></tr>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>SpaceX IPO: Jun 12, $135/share, $75–80B, Nasdaq SPCX</td><td>Reuters (May 15), Yahoo Finance, BigGo Finance, WSJ (S-1 May 20)</td></tr>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>Post-election foreign net BUY: +฿31B THB</td><td>SET Investnow 2026 Investment Outlook article</td></tr>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>5-year cumulative foreign outflow: −฿248B THB</td><td>SET Investnow 2026 Investment Outlook article</td></tr>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>PTTEP div yield 6.12%</td><td>SET factsheet + Morningstar 2026. Previous 8.33% (Finnomena Apr 2025) removed.</td></tr>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>SET 1-year return +38%</td><td>SimplyWallSt Jun 1, 2026 data</td></tr>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>S&amp;P 500: 7,584.31 / Nasdaq: 26,830.96 (Jun 4)</td><td>MarketWatch Jun 4, 2026</td></tr>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>Thais Help Thais Plus ฿2B+ Day-1 spend</td><td>Government announcement + Thansettakij Jun 2026</td></tr>
-            <tr><td><span class="vrd">✓ VERIFIED</span></td><td>GULF Jun 4 trading volume ฿6,715M</td><td>Money &amp; Banking Channel Instagram Jun 4 morning report</td></tr>
-            <tr><td><span class="unv">⚠ PENDING</span></td><td>SET Jun 5 close</td><td>Market open today — data not published yet. Check Settrade after close.</td></tr>
-            <tr><td><span class="unv">⚠ REMOVED</span></td><td>Previous −108B THB YTD outflow</td><td>Kaohoon May 29 source link inactive. Figure could not be independently verified. Removed entirely.</td></tr>
-            <tr><td><span class="unv">⚠ APPROX</span></td><td>NVDA ~$222.81</td><td>Investing.com real-time snapshot. Date not pinned. Exact Jun 2–4 closes not retrieved. Use Yahoo Finance NVDA history.</td></tr>
-            <tr><td><span class="unv">⚠ MORNING ONLY</span></td><td>GULF ฿67.75, AOT +5.04%, SCB +4%, DELTA +1.82%</td><td>Jun 4 midday session (Money &amp; Banking Channel). Not confirmed final EOD closes.</td></tr>
-            <tr><td><span class="unv">⚠ ESTIMATE</span></td><td>KBANK div yield ~7.8%</td><td>DividendMax Jun 2026 estimate. Verify against SET official dividend calendar + announced DPS.</td></tr>
-            <tr><td><span class="unv">⚠ NOT RETRIEVED</span></td><td>USD/THB rate</td><td>Not found in this session's searches. Check BOT.or.th for official rate.</td></tr>
-            <tr><td><span class="unv">⚠ NOT RETRIEVED</span></td><td>BOT meeting date</td><td>Next Monetary Policy Committee date not confirmed. Check BOT.or.th calendar.</td></tr>
-            <tr><td><span class="unv">⚠ MORNING ONLY</span></td><td>TSMC +2.42% (Jun 2)</td><td>From Motley Fool Jun 2 article — one intraday reference, not confirmed daily close.</td></tr>
+            <tr>
+              <td><strong>Banking</strong></td>
+              <td>Enhanced personal finance management features; safer/easier transactions within LINE</td>
+              <td>Deepen daily engagement</td>
+            </tr>
+            <tr>
+              <td><strong>Lending</strong></td>
+              <td>New partnerships: <strong>Lalamove, Rabbit Care, LINE MAN Wongnai</strong>; improved AI credit scoring; BOT Responsible Lending compliance</td>
+              <td><span class="up">+20–30% loan growth</span></td>
+            </tr>
+            <tr>
+              <td><strong>Insurance Brokerage</strong></td>
+              <td>New 2026 products; tagline: "Easy to buy, light to pay, all done within LINE"</td>
+              <td>Expand product portfolio</td>
+            </tr>
+            <tr>
+              <td><strong>Customer Growth</strong></td>
+              <td>Leveraging LINE ecosystem + KASIKORNBANK risk management + AI/data</td>
+              <td><span class="up">+10–15% annually</span></td>
+            </tr>
           </tbody>
         </table>
-      </div><!-- /integrity -->
+      </div>
 
-      <div id="tab-sources">
-        <ul class="src-list">
-          <li><a href="https://x.com/SET_Thailand_EN/status/2062518704148263365" target="_blank">SET Official Twitter — SET closed Jun 4 at 1,594.79 (+0.42%)</a><div class="src-desc">Primary source for Jun 4 close</div></li>
-          <li><a href="https://www.wsj.com/market-data/quotes/index/TH/SET/historical-prices" target="_blank">WSJ — SET Index Historical Prices</a><div class="src-desc">Jun 2: 1,588.06, Jun 4: 1,594.79, High 1,607.25</div></li>
-          <li><a href="https://www.settrade.com/th/equities/market-data/historical-report/five-days" target="_blank">Settrade — 5-Day Historical Data</a><div class="src-desc">Confirms Jun 4 as latest closed session (Jun 5 pending)</div></li>
-          <li><a href="https://today.line.me/th/v3/article/EXOGxOO?view=topic&referral=stockmarket" target="_blank">WeR News / Line Today — Jun 2 summary (+19.69 pts)</a><div class="src-desc">SET Jun 2, 2026 close 1,588.06</div></li>
-          <li><a href="https://www.facebook.com/wealthythai/posts/set-%E0%B8%A2%E0%B8%B7%E0%B8%99-1600-%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%AB%E0%B8%A7%E0%B8%9B%E0%B8%B4%E0%B8%94%E0%B8%9A%E0%B8%A7%E0%B8%81%E0%B8%97%E0%B8%B5%E0%B9%88-1595-%E0%B8%88%E0%B8%B8%E0%B8%94fund-flow-%E0%B9%84%E0%B8%AB%E0%B8%A5%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%B8%E0%B9%89%E0%B8%99-big-cap%E0%B8%81%E0%B8%A5%E0%B8%B8%E0%B9%88%E0%B8%A1%E0%B8%9E%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%B6/1039937985050778" target="_blank">WealthyThai Facebook — Jun 4 market summary</a><div class="src-desc">Foreign fund flow into energy big-caps (Krungsri)</div></li>
-          <li><a href="https://www.instagram.com/p/DZJw9AjoMqh" target="_blank">Money &amp; Banking Channel Instagram — Jun 4 top stocks</a><div class="src-desc">GULF 67.75, AOT +5.04%, SCB +4%, DELTA +1.82% (morning session)</div></li>
-          <li><a href="https://www.reuters.com/world/spacex-accelerates-ipo-timeline-targets-june-11-pricing-nasdaq-2026-05-15" target="_blank">Reuters — SpaceX targets June 12 Nasdaq listing</a><div class="src-desc">Primary source for SpaceX IPO timeline</div></li>
-          <li><a href="https://finance.yahoo.com/video/spacex-aims-for-price-of-135-per-share-for-june-12-ipo-reuters-135036878.html" target="_blank">Yahoo Finance — SpaceX $135/share IPO target</a><div class="src-desc">Pricing confirmation</div></li>
-          <li><a href="https://finance.biggo.com/news/DBmTTJ4BNl__-4_Ga2jF" target="_blank">BigGo Finance — SpaceX $74.5B IPO capital concern</a><div class="src-desc">$80B raise, capital drain concern for NVDA</div></li>
-          <li><a href="https://www.facebook.com/efinanceThaiTV/videos/nvidia-%E0%B8%87%E0%B8%9A%E0%B8%9B%E0%B8%B1%E0%B8%87-spacex-%E0%B8%88%E0%B9%88%E0%B8%AD-ipo-2-%E0%B8%AB%E0%B8%B8%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%82%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B9%80%E0%B8%97%E0%B8%84/904357109284289" target="_blank">eFinanceThai — Thai-language NVDA + SpaceX video</a><div class="src-desc">Evidence of Thai investor discussion of offshore stocks</div></li>
-          <li><a href="https://www.fool.com/investing/2026/06/02/spacex-power-ai-arms-race-stocks-invest" target="_blank">Motley Fool (Jun 2) — SpaceX–Anthropic deal; NVDA, TSM cited</a><div class="src-desc">Source for TSM +2.42% reference (intraday, not confirmed close)</div></li>
-          <li><a href="https://www.setinvestnow.com/th/knowledge/article/768-investhow-investment-outlook-asl-2026" target="_blank">SET Investnow — 2026 Outlook (foreign flow +฿31B post-election)</a><div class="src-desc">Post-election foreign buying data + 5-yr cumulative −฿248B</div></li>
-          <li><a href="https://www.thansettakij.com/blogs/columnist/speak-every-district/660512" target="_blank">Thansettakij — June 2026 Thai market outlook</a><div class="src-desc">CPALL, ADVANC, WHA broker picks; Thais Help Thais Plus context</div></li>
-          <li><a href="https://www.finnomena.com/definit/all-dr-2025" target="_blank">Finnomena — DR list 2026 (NVDA, TSMC on SET)</a><div class="src-desc">Evidence Thai investors access offshore via DRs</div></li>
-          <li><a href="https://simplywall.st/markets/th" target="_blank">SimplyWallSt — SET market cap ฿19.9T, 1-yr +38%</a><div class="src-desc">Market stats Jun 1, 2026</div></li>
-          <li><a href="https://www.marketwatch.com/investing/index/set?countrycode=th" target="_blank">MarketWatch — S&amp;P 500 7,584 / Nasdaq 26,831 (Jun 4)</a><div class="src-desc">US market closes for context</div></li>
-          <li><a href="https://www.marketbeat.com/stocks/NASDAQ/NVDA/forecast" target="_blank">MarketBeat — NVDA analyst targets $255–$270 (May 2026)</a><div class="src-desc">Daiwa, Argus recent upgrades</div></li>
-        </ul>
-      </div><!-- /sources -->
+      <div style="margin-top:12px;font-size:12px;color:var(--muted);padding-left:4px;">
+        CEO: <strong style="color:var(--text);">Tana Pothikamjorn</strong> — "LINE BK is committed to developing financial services that support Thai customers as an 'Everyday Financial Partner.'"<br>
+        Macro headwind: Thailand GDP 2026 ~1.5% growth; weak purchasing power; trade uncertainty.<br>
+        Source: <a href="https://www.linebk.com/en/news/detail/line-bk-advances-its-2026-business-plan-reinforcing-its-role-as-an-everyday-financial-partner-helping-customers-manage-everyday-finances-with-greater-ease-and-confidence" style="color:var(--line-green);">LINE BK Official Press Release</a>
+      </div>
+    </div>
 
-    </div><!-- /bottom-area -->
+    <!-- LY CORP STOCK -->
+    <div class="line-subsection">
+      <div class="line-subsection-title">B · LY Corporation (4689.T) — LINE Parent Stock on Tokyo Stock Exchange</div>
 
-  </div><!-- /main -->
-</div><!-- /layout -->
+      <div class="cards-grid" style="margin-bottom:16px;">
+        <div class="card" style="border-color:rgba(0,185,0,0.25);">
+          <div class="card-header">
+            <div><div class="card-ticker">4689.T</div><div class="card-name">LY Corporation — Tokyo SE</div></div>
+            <span class="badge badge-green">Active</span>
+          </div>
+          <div class="card-price">406.70 JPY</div>
+          <div class="card-change down">-1.30 (-0.32%) — Jun 8, 2026</div>
+          <div class="card-divider"></div>
+          <div class="card-meta">
+            <strong>52-Week Low:</strong> 365.10 JPY (Feb 24, 2026)<br>
+            <strong>Market Cap:</strong> ~2.798T JPY<br>
+            <strong>Next Earnings:</strong> August 4, 2026<br>
+            <strong>Avg. Analyst TP:</strong> 450 JPY (+10.65% upside) — 3 analysts
+          </div>
+        </div>
 
-<script>
-/* ── Ticker data ──────────────────────────────────── */
-const ticks = [
-  {lbl:'SET',val:'1,594.79',chg:'+0.42%',dir:'up'},
-  {lbl:'S&P 500',val:'7,584.31',chg:'+0.41%',dir:'up'},
-  {lbl:'NASDAQ',val:'26,830.96',chg:'−0.09%',dir:'dn'},
-  {lbl:'NVDA',val:'~$222',chg:'approx',dir:'up',extra:'<span class="tick-badge">AI Play</span>'},
-  {lbl:'SPCX IPO',val:'Jun 12',chg:'$135/sh',dir:'neu',extra:'<span class="tick-badge-ipo">🚀 LARGEST EVER</span>'},
-  {lbl:'TSM',val:'+2.42%',chg:'Jun 2',dir:'up'},
-  {lbl:'GULF',val:'฿67.75',chg:'AM session',dir:'up'},
-  {lbl:'AOT',val:'+5.04%',chg:'AM Jun 4',dir:'up'},
-  {lbl:'KBANK',val:'~7.8%',chg:'div yield',dir:'neu'},
-  {lbl:'PTTEP',val:'6.12%',chg:'div yield ✓',dir:'up'},
-  {lbl:'Brent',val:'>$100',chg:'US-Iran',dir:'up'},
-  {lbl:'SET 1-yr',val:'+38%',chg:'return',dir:'up'},
-];
+        <div class="card" style="border-color:rgba(0,185,0,0.25);">
+          <div class="card-header">
+            <div><div class="card-ticker" style="font-size:14px;">Key News</div><div class="card-name">May 27, 2026</div></div>
+            <span class="badge badge-orange">Material</span>
+          </div>
+          <div class="card-price" style="font-size:15px;">LINE MAN Stake ↑61%</div>
+          <div class="card-change up">Cleared by regulators</div>
+          <div class="card-divider"></div>
+          <div class="card-meta">
+            LY Corporation was <strong>cleared to raise its stake in LINE MAN</strong> (Thailand's major food delivery + services platform) to nearly <strong>61%</strong>. Direct relevance: LINE MAN is a key lending partner for LINE BK. Increases LINE's Thailand footprint.
+            <br><a href="https://www.marketwatch.com/investing/stock/4689?countrycode=jp" style="color:var(--line-green);font-size:11px;">Source: MarketWatch</a>
+          </div>
+        </div>
 
-function buildTicker(){
-  const track = document.getElementById('tickerTrack');
-  let html = '';
-  // double for seamless loop
-  for(let r=0;r<2;r++){
-    ticks.forEach(t=>{
-      html += `<span class="tick-item">
-        <span class="tick-label">${t.lbl}</span>
-        <span class="tick-val ${t.dir}">${t.val}</span>
-        <span class="tick-chg ${t.dir}">${t.chg}</span>
-        ${t.extra||''}
-      </span>`;
-    });
-  }
-  track.innerHTML = html;
-}
-buildTicker();
+        <div class="card" style="border-color:rgba(0,185,0,0.25);">
+          <div class="card-header">
+            <div><div class="card-ticker" style="font-size:14px;">Business</div><div class="card-name">LY Corp Overview</div></div>
+          </div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.7;margin-top:4px;">
+            Formerly <strong style="color:var(--text);">Z Holdings</strong>, renamed LY Corporation in Oct 2023.<br>
+            Operates: <strong style="color:var(--text);">LINE app</strong>, Yahoo! JAPAN, PayPay (Japan's largest QR payment).<br>
+            Subsidiary of <strong style="color:var(--text);">A Holdings Corporation</strong> (SoftBank-related).<br>
+            Fiscal year ends: March 31.
+          </div>
+        </div>
+      </div>
+    </div>
 
-/* ── Mini heat bars ───────────────────────────────── */
-window.addEventListener('load',()=>{
-  setTimeout(()=>{
-    document.querySelectorAll('.hm-bar[data-w]').forEach(b=>{b.style.width=b.dataset.w+'%'});
-    document.querySelectorAll('.sc-bar[data-w]').forEach(b=>{b.style.width=b.dataset.w+'%'});
-  },400);
-});
+    <!-- LINE AS PLATFORM -->
+    <div class="line-subsection">
+      <div class="line-subsection-title">C · LINE as an Investor Information Platform in Thailand</div>
 
-/* ── Card toggle ──────────────────────────────────── */
-function toggleScard(el){
-  el.classList.toggle('expanded');
-}
+      <div class="alert-box" style="background:rgba(0,185,0,0.06);border:1px solid rgba(0,185,0,0.2);margin-bottom:12px;">
+        <div class="alert-icon">📱</div>
+        <div>
+          <div class="alert-title">How Thai Investors Use LINE Daily</div>
+          <div class="alert-body">
+            <strong>LINE TODAY</strong> — major news aggregation layer within LINE app; finance publishers like StockRadars post daily market close reports to millions of Thai users (confirmed: June 2 data published via LINE TODAY).<br><br>
+            <strong>LINE OpenChat</strong> — popular among Thai retail investors for real-time stock discussion groups. Stocks are shared, debated, and "tip lines" circulate here. Private/invite-only; content not publicly accessible.<br><br>
+            <strong style="color:var(--red);">⚠️ SEC Warning:</strong> Multiple fake LINE OpenChat groups are impersonating licensed brokers. Always verify broker credentials on SEC Thailand's official portal before following any investment calls from LINE groups.
+          </div>
+        </div>
+      </div>
 
-/* ── Grid filter ──────────────────────────────────── */
-function filterGrid(market,type,btn){
-  const gridId = market==='thai'?'thaiGrid':'offshoreGrid';
-  const btns = btn.closest('.gs-filters').querySelectorAll('.gf-btn');
-  btns.forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('#'+gridId+' .scard').forEach(c=>{
-    if(type==='all'){c.style.display='';return;}
-    const sec=(c.dataset.sec||'');
-    const sent=(c.dataset.sent||'');
-    c.style.display=(sec.includes(type)||sent===type)?'':'none';
-  });
-}
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>LINE Channel</th>
+              <th>Usage among Thai Investors</th>
+              <th>Caution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>LINE TODAY</strong></td>
+              <td>News aggregator: finance, stock reports, market close data. StockRadars, SET Navigator, and others publish here daily.</td>
+              <td>Legitimate media; vet individual publishers</td>
+            </tr>
+            <tr>
+              <td><strong>LINE OpenChat (public)</strong></td>
+              <td>Open investment discussion groups; trend-surfacing for retail sentiment. High engagement around trending stocks.</td>
+              <td><span class="down">SEC warns of fraudulent groups — verify!</span></td>
+            </tr>
+            <tr>
+              <td><strong>LINE OpenChat (private)</strong></td>
+              <td>Invite-only groups run by influencers, brokerages, communities. Primary channel for Thai retail "signals."</td>
+              <td>Not publicly accessible; content unverifiable</td>
+            </tr>
+            <tr>
+              <td><strong>LINE Official Accounts</strong></td>
+              <td>Brokerages (e.g., Kasikorn Securities, Bualuang) push research, alerts, and morning briefs via LINE OA.</td>
+              <td>Check official LINE OA verified badge</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-/* ── Tab switch ───────────────────────────────────── */
-function switchTab(id,btn){
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  ['themes','social','opps','integrity','sources'].forEach(t=>{
-    const el=document.getElementById('tab-'+t);
-    if(!el)return;
-    el.className = (t===id) ? (t==='integrity'||t==='sources'?'active':'tab-pane active') : (t==='integrity'||t==='sources'?'':'tab-pane');
-    if(t===id && (t==='integrity'||t==='sources')) el.style.display='block';
-    else if(t!==id && (t==='integrity'||t==='sources')) el.style.display='none';
-  });
-}
-// init non-grid tab panes
-document.getElementById('tab-integrity').style.display='none';
-document.getElementById('tab-sources').style.display='none';
+  <!-- ── SECTION 7: GAPS & LIMITATIONS ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number" style="background:#374151;">!</div>
+      <div class="section-title">Data Gaps &amp; Limitations</div>
+      <div class="section-line"></div>
+    </div>
 
-/* ── View switch ─────────────────────────────────── */
-function switchView(v,btn){
-  document.querySelectorAll('.nav-pill').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-}
-</script>
+    <div class="gaps-box">
+      <div class="gaps-title">What Could Not Be Confirmed at Time of Data Pull</div>
+      <ul class="gaps-list">
+        <li><strong>Pantip post body (Jun 8–12 Kasikorn Bank outlook):</strong> Headline confirmed, full body text not accessible. Full Middle East risk details unavailable.</li>
+        <li><strong>Top-30 short-sell list (Jun 8):</strong> Kaohoon International Facebook post confirmed, but content restricted. Exact list not retrieved.</li>
+        <li><strong>LINE OpenChat discussions:</strong> Private group content is inaccessible publicly. Specific stocks being discussed inside groups are unknown.</li>
+        <li><strong>moneyandbanking.co.th Jun 9 article:</strong> Confirmed by headline/snippet; full text timed out. Analyst names and exact targets not retrieved.</li>
+        <li><strong>SET closing price June 9:</strong> Data pulled mid-session (~12:30 PM). Final close may differ from values shown.</li>
+        <li><strong>KBANK (KasikornBank) stock price today:</strong> Not confirmed with specific intraday price for June 9.</li>
+        <li><strong>LINE Corporation is NOT listed on SET:</strong> Thai investors cannot buy LINE/LY Corp on SET; must use Tokyo SE (4689.T) or via DR (Depositary Receipt) if available.</li>
+        <li><strong>TRUE CEO detail:</strong> "คุณซิกเว่" referenced in Pantip thread — full name/context unconfirmed from official filings. Verify against Form 59 disclosure.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── SOURCES ── -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number" style="background:#374151;">S</div>
+      <div class="section-title">Sources</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="sources-grid">
+      <a class="source-pill" href="https://www.reuters.com/markets/quote/.SETI" target="_blank">Reuters — SETI Live</a>
+      <a class="source-pill" href="https://finance.yahoo.com/quote/%5ESET.BK" target="_blank">Yahoo Finance — SET</a>
+      <a class="source-pill" href="https://tradingeconomics.com/thailand/stock-market" target="_blank">TradingEconomics — SET50</a>
+      <a class="source-pill" href="https://www.investing.com/indices/thailand-set-historical-data" target="_blank">Investing.com — SET Historical</a>
+      <a class="source-pill" href="https://www.set.or.th/en/home" target="_blank">SET.or.th — Official</a>
+      <a class="source-pill" href="https://moneyandbanking.co.th/en/2026/249006" target="_blank">M&amp;B — Jun 9 Outlook</a>
+      <a class="source-pill" href="https://moneyandbanking.co.th/en/2026/248823" target="_blank">M&amp;B — Jun 8 Globlex</a>
+      <a class="source-pill" href="https://www.bangkokpost.com/business/investment/3206043/analysts-see-buoyant-set-following-rate-cut" target="_blank">Bangkok Post — Rate Cut</a>
+      <a class="source-pill" href="https://today.line.me/th/v3/article/YaKEJG8" target="_blank">StockRadars / LINE TODAY</a>
+      <a class="source-pill" href="https://pantip.com/topic/44116331" target="_blank">Pantip — บ้าบอคอหุ้น Jun 6</a>
+      <a class="source-pill" href="https://pantip.com/topic/44117764" target="_blank">Pantip — KBank Jun 8–12</a>
+      <a class="source-pill" href="https://www.youtube.com/watch?v=TZxMF46mMfU" target="_blank">TNN — Jun 2</a>
+      <a class="source-pill" href="https://www.youtube.com/watch?v=FFUAYFrCHqs" target="_blank">TNN — Jun 5</a>
+      <a class="source-pill" href="https://www.youtube.com/watch?v=F9mwpqPXsWg" target="_blank">TNN — Jun 8</a>
+      <a class="source-pill" href="https://www.youtube.com/watch?v=rAWjKupvZEY" target="_blank">YouTube — Jun 7 Analysis</a>
+      <a class="source-pill" href="https://www.linebk.com/en/news/detail/line-bk-advances-its-2026-business-plan-reinforcing-its-role-as-an-everyday-financial-partner-helping-customers-manage-everyday-finances-with-greater-ease-and-confidence" target="_blank">LINE BK — 2026 Business Plan</a>
+      <a class="source-pill" href="https://www.reuters.com/markets/companies/4689.T" target="_blank">Reuters — LY Corp 4689.T</a>
+      <a class="source-pill" href="https://finance.yahoo.com/quote/4689.T" target="_blank">Yahoo Finance — LY Corp</a>
+      <a class="source-pill" href="https://www.marketwatch.com/investing/stock/4689?countrycode=jp" target="_blank">MarketWatch — LY Corp</a>
+      <a class="source-pill" href="https://market.sec.or.th/public/idisc/en/Viewmore/invalert-head?PublicFlag=Y" target="_blank">SEC Thailand — Investor Alert</a>
+      <a class="source-pill" href="https://www.bot.or.th/en/our-roles/monetary-policy/mpc-meeting.html" target="_blank">BOT — MPC Schedule</a>
+      <a class="source-pill" href="https://www.marketsgroup.org/forums/thailand-investors-forum" target="_blank">Thailand Investors Forum</a>
+      <a class="source-pill" href="https://www.bloomberg.com/news/articles/2026-02-08/clear-thai-election-victory-to-give-investors-policy-continuity" target="_blank">Bloomberg — Election Rally</a>
+      <a class="source-pill" href="https://www.kasikornsecurities.com/en/research/thai-stocks/strategy/research-20260106-913" target="_blank">Kasikorn Securities — AMATA</a>
+      <a class="source-pill" href="https://www.setinvestnow.com/th/knowledge/article/760-investhow-investment-outlook-bls-2026-2" target="_blank">SET InvestNow — BLS 2026 Picks</a>
+      <a class="source-pill" href="https://www.am2026thailand.go.th" target="_blank">IMF/WB 2026 — Bangkok</a>
+      <a class="source-pill" href="https://www.finnomena.com/andrewstotz/all-weather-strategy-jun-2026" target="_blank">Finnomena — Jun Strategy</a>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<div class="footer">
+  <div class="footer-left">
+    <strong style="color:#fff;">moomoo Thailand</strong> · Market Intelligence<br>
+    Report Date: June 9, 2026 · Data pull: mid-session
+  </div>
+  <div class="footer-disclaimer">
+    This report is for internal strategy and content planning purposes only. All data sourced from public platforms. Prices and market data may not reflect final closing values. Not investment advice. Verify all figures before publishing externally.
+  </div>
+</div>
+
 </body>
 </html>
